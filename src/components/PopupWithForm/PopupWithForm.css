@@ -1,0 +1,145 @@
+.popup__title {
+  max-width: 76px;
+  color: #1a1b22;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 28px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.popup__form {
+  margin: 0 auto;
+  max-width: 430px;
+  border-radius: 16px;
+}
+
+.popup__form-control {
+  display: flex;
+  flex-direction: column;
+}
+
+.popup__field-container {
+}
+
+.popup__field-container:last-child {
+  padding-bottom: 0;
+}
+
+.popup__field {
+  margin: 0;
+  padding-bottom: 9px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.2;
+  color: #2f71e5;
+}
+
+.popup__input {
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 0;
+  margin-bottom: 3px;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  padding-bottom: 7px;
+  width: 358px;
+  text-align: start;
+  color: #000;
+}
+
+.popup__input:hover {
+  border-bottom: 1px solid #1a1b22;
+}
+
+.popup__input::placeholder {
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+  opacity: 0.2;
+}
+
+.popup__field-error {
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.2;
+  color: #ff0000;
+}
+
+.popup__form-button {
+  border-radius: 100px;
+  max-width: 360px;
+  border: none;
+  background-color: #2f71e5;
+  box-shadow: 0px 5px 15px rgba(14, 26, 57, 0.2);
+  color: #ffffff;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: center;
+  padding: 20px 115px;
+}
+
+.popup__form-button:hover {
+  background-color: #347eff;
+}
+.popup__form-button_disabled {
+    background-color: #E6E8EB;
+    color: #B6BCBF;
+    cursor: auto;
+  }
+  
+  .popup__redirect {
+    width: 360px;
+    padding-top: 16px;
+    margin: 0;
+    text-align: center;
+    color: #000;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.2;
+    margin-bottom: 28px;
+  }
+  
+  .popup__redirect-link {
+    color: #2F71E5;
+    cursor: pointer;
+  }
+  
+
+@media screen and (max-width: 500px) {
+  .popup__title {
+    max-width: 158px;
+  }
+
+  .popup__form {
+    max-width: 320px;
+  }
+
+  .popup__form-control {
+    max-width: 320px;
+  }
+
+  .popup__field-container {
+  }
+
+  .popup__input {
+  }
+
+  .popup__field-error {
+  }
+
+  .popup__form-button {
+    max-width: 288px;
+  }
+}
