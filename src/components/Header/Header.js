@@ -4,7 +4,7 @@ import SavedNewsHeader from "../SavedNewsHeader/SavedNewsHeader";
 import SearchForm from "../SearchForm/SearchForm";
 import { useHomePage } from "../../contexts/HomePageContext";
 
-const Header = () => {
+function Header ()  {
   const { homePage } = useHomePage();
   return (
     <header className={`${homePage ? "header" : "header header_black"}`}>

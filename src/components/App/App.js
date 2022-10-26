@@ -11,6 +11,9 @@ import SavedNews from "../SavedNews/SavedNews";
 //import SaveNewsHeader from "../SavedNewsHeader/SavedNewsHeader";
 
 function App() {
+  //[isHomePage, setIsHomePage] = useState(true)
+  
+  
   return (
     <div className="App">
       <Header />

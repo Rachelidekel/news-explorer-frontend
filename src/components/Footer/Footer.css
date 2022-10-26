@@ -3,6 +3,7 @@
   padding: 32px 20px;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 
 .footer__copyright {
@@ -59,7 +60,7 @@
   max-width: 20px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 510px) {
   .footer {
     flex-direction: column-reverse;
     height: 176px;
@@ -68,6 +69,7 @@
 
   .footer__navigation {
     justify-content: space-between;
+    align-items: flex-start;
   }
 
   .footer__copyright {
@@ -77,11 +79,12 @@
 
   .footer__links {
     padding-left: 16px;
+    flex-direction: column;
+    gap: 20px;
   }
 }
 
 @media screen and (max-width: 420px) {
   .footer__links {
-    flex-direction: column;
   }
 }

@@ -12,8 +12,6 @@ export const data = [
     source: "treehugger",
     link: "https://newsapi.org",
     image: dogImage,
-    owner: "685586c31ec32fed59ba7e64",
-    __v: 0,
   },
   {
     _id: "2",
@@ -24,8 +22,6 @@ export const data = [
     source: "national geographic",
     link: "https://newsapi.org",
     image: boatImage,
-    owner: "685586c31ec32fed59ba7e64",
-    __v: 0,
   },
   {
     _id: "3",
@@ -36,7 +32,5 @@ export const data = [
     source: "national geographic",
     link: "https://newsapi.org",
     image: viewImage,
-    owner: "685586c31ec32fed59ba7e64",
-    __v: 0,
   },
 ];
