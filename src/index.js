@@ -4,12 +4,18 @@ import "./index.css";
 import App from "./components/App/App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
+import HomePageContextProvider from "./contexts/HomePageContext";
+import CardsContextProvider from "./contexts/CardsContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <HomePageContextProvider>
+        <CardsContextProvider>
+          <App />
+        </CardsContextProvider>
+      </HomePageContextProvider>
     </BrowserRouter>
   </React.StrictMode>
 );
