@@ -1,11 +1,11 @@
 import React from 'react';
 import NewsCardList from '../NewsCardList/NewsCardList';
 
-function SavedNews() {
+function SavedNews({isHomePage}) {
   return (
     <section className="saved-news">
       <div className="saved-news__container">
-        <NewsCardList />
+        <NewsCardList isHomePage={isHomePage} />
       </div>
     </section>
   );

@@ -1,13 +1,9 @@
 import React from "react";
-import { useCards } from "../../contexts/CardsContext";
+import { data } from "../../utils/data";
 
 function SavedNewsHeader() {
-  const { data } = useCards();
-
   const keywords = data.map((card) => card.keyword);
   const uniqueKeywords = [...new Set(keywords)];
-
-  //console.log(uniqueKeywords);
 
   return (
     <div className="news-header">

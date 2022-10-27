@@ -117,9 +117,14 @@
   font-size: 14px;
   line-height: 24px;
   color: #000000;
+  margin-top: 0;
 }
 
 @media screen and (max-width: 786px) {
+  .card {
+    max-width: 224px;
+  }
+
   .card__image-wrapper {
     height: 150px;
   }
@@ -151,5 +156,17 @@
   .card__source {
     margin-top: 12px;
     margin-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .card {
+    max-width: 350px;
+  }
+}
+
+@media screen and (max-width: 510px) {
+  .card {
+    max-width: 288px;
   }
 }

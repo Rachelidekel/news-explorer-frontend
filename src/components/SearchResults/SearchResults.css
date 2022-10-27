@@ -20,7 +20,6 @@
   align-self: flex-start;
   margin-bottom: 64px;
   margin-block-start: 0;
-  margin-block-end: 0;
 }
 
 .search-results__button {
@@ -41,6 +40,10 @@
   cursor: pointer;
 }
 
+.search-results__button:hover {
+  background-color: #e8e8e8;
+}
+
 @media screen and (max-width: 768px) {
   .search-results {
     padding: 40px 16px;
@@ -54,6 +57,9 @@
 
 @media screen and (max-width: 510px) {
   .search-results__title {
+    width: 288px;
+    margin: 0 auto;
+    text-align: left;
     margin-bottom: 58px;
   }
 }

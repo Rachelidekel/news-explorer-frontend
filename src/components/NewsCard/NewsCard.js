@@ -1,10 +1,8 @@
 import React from "react";
 import savebutton from "../../images/save_icon.svg";
 import deletebutton from "../../images/trash_icon.svg";
-import { useHomePage } from "../../contexts/HomePageContext";
 
-const NewsCard = ({ card }) => {
-  const { homePage } = useHomePage();
+const NewsCard = ({ card, isHomePage }) => {
   return (
     <article className="card">
       <div className="card__image-wrapper">
@@ -18,14 +16,14 @@ const NewsCard = ({ card }) => {
       </div>
       <button
         className="card__button"
-        aria-label={homePage ? "save article" : "delete article"}
+        aria-label={isHomePage ? "save article" : "delete article"}
       >
         <img
           className="card__button-icon"
-          src={homePage ? savebutton : deletebutton}
+          src={isHomePage ? savebutton : deletebutton}
         />
       </button>
-      {!homePage && <p className="card__keyword">{card.keyword}</p>}
+      {!isHomePage && <p className="card__keyword">{card.keyword}</p>}
     </article>
   );
 };

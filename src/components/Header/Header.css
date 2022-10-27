@@ -10,7 +10,11 @@
   padding-bottom: 80px;
 }
 
-.header_black {
+.header__container {
+    width: 100%
+}
+
+.header__black {
   background-image: none;
   color: black;
 }
@@ -42,8 +46,7 @@
 
 @media screen and (max-width: 1300px) {
   .header {
-    padding-left: 40px;
-    padding-right: 40px;
+    
   }
 }
 
@@ -56,9 +59,8 @@
 @media screen and (max-width: 768px) {
   .header {
     padding-bottom: 48px;
-    padding-left: 16px;
-    padding-right: 16px;
   }
+
   .header__title {
     font-size: 36px;
     line-height: 40px;
@@ -84,10 +86,12 @@
   .header {
     padding-bottom: 32px;
   }
+
   .header__content {
     margin: 30px auto 0;
     max-width: 452px;
   }
+  
   .header__subtitle {
     margin: 16px 0 122px 0;
   }

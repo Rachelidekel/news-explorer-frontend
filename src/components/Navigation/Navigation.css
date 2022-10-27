@@ -1,19 +1,20 @@
 .navigation {
   width: 100%;
+  border-bottom: 1px rgba(255, 255, 255, 0.2) solid;
+}
+
+.navigation__wrapper {
   margin: 0 auto;
   padding-top: 19px;
   padding-bottom: 19px;
   background: transparent;
-  border-bottom: 1px rgba(255, 255, 255, 0.2) solid;
   box-sizing: border-box;
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.nav_bg-light {
-  color: black;
+  margin-right: 104px;
+  margin-left: 104px;
 }
 
 .navigation__logo {
@@ -23,7 +24,6 @@
   cursor: pointer;
   text-decoration: none;
   list-style: none;
-  margin-left: 104px;
 }
 
 .navigation__menu {
@@ -33,7 +33,6 @@
   font-family: "Roboto", Arial, Helvetica, sans-serif;
   font-weight: 500;
   text-decoration: none;
-  margin-right: 104px;
 }
 
 .navigation__menu-list {
@@ -74,7 +73,7 @@
 
 .navigation__button {
   border-radius: 100px;
-  padding: 12px 19px;
+  padding: 12px;
   background: transparent;
   display: flex;
   align-items: center;
@@ -83,9 +82,17 @@
   font-family: "Roboto", Arial, Helvetica, sans-serif;
   font-weight: 500;
   text-decoration: none;
-  cursor: pointer;
   color: #fff;
   border: 1px solid #fff;
+  width: 176px;
+}
+
+.navigation__button:hover {
+  opacity: 0.6;
+}
+
+.navigation__button-text {
+  margin: 0 auto;
 }
 
 .navigation__button_black {
@@ -109,9 +116,28 @@
   cursor: pointer;
 }
 
+@media screen and (max-width: 1300px) {
+  .navigation__wrapper {
+    margin-right: 40px;
+    margin-left: 40px;
+  }
+}
+
 @media screen and (max-width: 1024px) {
   .navigation__menu-list {
     gap: 50px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navigation__wrapper {
+    margin-right: 16px;
+    margin-left: 16px;
+  }
+
+  .navigation__button {
+    width: 152px;
+    font-size: 16px;
   }
 }
 
@@ -126,5 +152,12 @@
   }
   .navigation__hamburger {
     display: block;
+  }
+}
+
+@media screen and (max-width: 510px) {
+  .navigation__button {
+    width: 288px;
+    font-size: 18px;
   }
 }

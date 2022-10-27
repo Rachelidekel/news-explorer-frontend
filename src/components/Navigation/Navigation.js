@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import logoWhite from "../../images/NewsExplorer_logo_white.svg";
 import logoBlack from "../../images/NewsExplorer_logo_black.svg";
@@ -7,11 +7,23 @@ import logOutIconBlack from "../../images/logout_icon_black.svg";
 import hbMenuWhite from "../../images/menu_icon_white.svg";
 import hbMenuBlack from "../../images/menu_icon_black.svg";
 
-const Navigation = ({ homePage }) => {
+const Navigation = ({ isHomePage, onSignInClick }) => {
+  const [isHumburgerMenuOpened, setIsHumburgerMenuOpened] = useState(false);
+  
+  function handleMenuClick() {
+    setIsHumburgerMenuOpened((open) => !open);
+  }
+
+  //function handleLogOut() {
+  //setIsHeaderMenuOpen(false);
+  //onLogOut();
+  //}
+
   return (
     <nav className="navigation">
+        <div className="navigation__wrapper" >
       <Link className="navigation__logo" to="/">
-        <img src={homePage ? logoWhite : logoBlack} alt="logo" />
+        <img src={isHomePage ? logoWhite : logoBlack} alt="logo" />
       </Link>
       <div className="navigation__menu">
         <ul className="navigation__menu-list">
@@ -20,12 +32,12 @@ const Navigation = ({ homePage }) => {
               exact={true}
               to="/"
               className={
-                homePage
+                isHomePage
                   ? "navigation__link"
                   : "navigation__link navigation__link_black"
               }
               activeClassName={` ${
-                homePage
+                isHomePage
                   ? "navigation__link-active"
                   : "navigation__link-active navigation__link-active_black"
               }`}
@@ -37,12 +49,12 @@ const Navigation = ({ homePage }) => {
             <NavLink
               to="/saved-news"
               className={
-                homePage
+                isHomePage
                   ? "navigation__link"
                   : "navigation__link navigation__link_black"
               }
               activeClassName={` ${
-                homePage
+                isHomePage
                   ? "navigation__link-active"
                   : "navigation__link-active nav__link-active_black"
               }`}
@@ -53,10 +65,11 @@ const Navigation = ({ homePage }) => {
         </ul>
         <button
           className={`${
-            homePage
+            isHomePage
               ? "navigation__button"
               : "navigation__button navigation__button_black"
           }`}
+          onClick={onSignInClick}
         >
           <span className="navigation__button-text">Sign in</span>
           <img
@@ -66,9 +79,14 @@ const Navigation = ({ homePage }) => {
           />
         </button>
       </div>
-      <button className="navigation__hamburger">
-        <img src={homePage ? hbMenuWhite : hbMenuBlack} alt="hamburger-icon" />
+      <button className={`navigation__hamburger ${isHumburgerMenuOpened ? "navigation__hamburger-open" : ""}`}>
+        <img
+          src={isHomePage ? hbMenuWhite : hbMenuBlack}
+          alt="hamburger-icon"
+          onClick={handleMenuClick}
+        />
       </button>
+      </div>
     </nav>
   );
 };

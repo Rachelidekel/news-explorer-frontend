@@ -2,10 +2,10 @@ import React from "react";
 import SearchResults from "../SearchResults/SearchResults";
 import About from "../About/About";
 
-function Main() {
+function Main({isHomePage}) {
   return (
     <main className="main">
-      <SearchResults />
+      <SearchResults isHomePage={isHomePage}/>
       <About />
     </main>
   );

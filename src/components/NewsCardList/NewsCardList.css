@@ -10,13 +10,20 @@
   padding-bottom: 64px;
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 1000px) {
   .cards {
+    grid-gap: 8px;
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .cards {
+    grid-gap: 20px;
     grid-template-columns: repeat(2, minmax(224px, 1fr));
   }
 }
 
-@media (max-width: 510px) {
+@media screen and (max-width: 510px) {
   .cards {
     grid-template-columns: repeat(1, minmax(224px, 1fr));
   }
