@@ -1,7 +1,7 @@
-import React from 'react';
-import NewsCardList from '../NewsCardList/NewsCardList';
+import React from "react";
+import NewsCardList from "../NewsCardList/NewsCardList";
 
-function SearchResults({isHomePage, cardData}) {
+function SearchResults({ isHomePage, cardData }) {
   return (
     <section className="search-results">
       <div className="search-results__container">
@@ -11,6 +11,6 @@ function SearchResults({isHomePage, cardData}) {
       </div>
     </section>
   );
-};
+}
 
 export default SearchResults;

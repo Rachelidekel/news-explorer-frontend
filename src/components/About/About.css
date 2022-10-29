@@ -2,10 +2,20 @@
   display: flex;
   background-color: #ffffff;
   height: 624px;
+  width: 100%;
+}
+
+.about__avatar-image {
+  width: 464px;
+  height: 464px;
+  border-radius: 100%;
+  margin: 80px 56px 80px 104px;
+  object-fit: cover;
 }
 
 .about__container {
   max-width: 600px;
+  margin-top: 131px;
 }
 
 .about__title {
@@ -15,7 +25,6 @@
   font-size: 40px;
   line-height: 46px;
   color: #1a1b22;
-  margin: 131px 0 0;
 }
 
 .about__content {
@@ -28,22 +37,27 @@
   margin: 24px 0 0;
 }
 
-.about__avatar-image {
-  min-width: 464px;
-  min-height: 464px;
-  border-radius: 100%;
-  margin: 80px 56px 80px 104px;
-  object-fit: cover;
-}
-
-@media screen and (max-width: 900px) {
-  .about {
-    height: 354px;
-    width: 100%;
+@media screen and (max-width: 1280px) {
+  .about__avatar-image {
+    margin-left: 80px;
+    width: 300px;
+    height: 300px;
   }
 
   .about__container {
-    max-width: 424px;
+    max-width: 530px;
+    margin-top: 80px;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .about {
+    height: 354px;
+  }
+
+  .about__container {
+    max-width: 520px;
+    margin-top: 40px;
   }
 
   .about__title {
@@ -51,41 +65,63 @@
     line-height: 40px;
     margin: 40px 0 0;
   }
+
   .about__content {
     margin: 16px 0 0;
   }
+
   .about__avatar-image {
-    min-width: 232px;
-    min-height: 232px;
+    width: 232px;
+    height: 232px;
     margin: 61px 32px 61px 40px;
+  }
+}
+
+@media screen and (max-width: 880px) {
+  .about__container {
+    max-width: 424px;
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .about__avatar-image {
+    margin: 50px 32px 61px 40px;
   }
 }
 
 @media screen and (max-width: 550px) {
   .about {
-    min-height: 752px;
+    height: 100vh;
     flex-direction: column;
     align-items: center;
   }
+
   .about__container {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 16px;
+    margin-top: 0;
+  }
+
+  .about__avatar-image {
+    max-width: 272px;
+    max-height: 272px;
+    margin: 32px 24px 24px;
   }
 
   .about__title {
     width: 288px;
     margin: 24px 16px 0;
   }
+
+  .about__container {
+    max-width: 288px;
+  }
+
   .about__content {
     width: 288px;
     margin: 0 16px;
-  }
-  .about__avatar-image {
-    width: 272px;
-    max-height: 272px;
-    margin: 32px 24px 0;
   }
 }

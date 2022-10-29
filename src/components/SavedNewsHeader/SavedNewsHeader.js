@@ -6,7 +6,7 @@ function SavedNewsHeader() {
   const uniqueKeywords = [...new Set(keywords)];
 
   return (
-    <div className="news-header">
+    <header className="news-header">
       <h1 className="news-header__title">Saved articles</h1>
       <p className="news-header__subtitle">
         You have {data.length} saved articles
@@ -22,7 +22,7 @@ function SavedNewsHeader() {
               " more"}
         </span>
       </p>
-    </div>
+    </header>
   );
 }
 

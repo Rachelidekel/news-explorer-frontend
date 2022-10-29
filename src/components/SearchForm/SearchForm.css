@@ -31,6 +31,14 @@
   color: #fff;
 }
 
+.search-form__button:hover {
+  background-color: #347eff;
+}
+
+.search-form__button:active {
+  background-color: #2a65cc;
+}
+
 @media screen and (max-width: 768px) {
   .search-form {
     max-width: 448px;
@@ -47,6 +55,10 @@
 }
 
 @media screen and (max-width: 480px) {
+  .search-form {
+    width: 100%;
+  }
+
   .search-form__button {
     position: relative;
     width: 100%;
@@ -55,5 +67,11 @@
 
   .search-form__input {
     padding: 17px 24px;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .search-form {
+    width: 288px;
   }
 }

@@ -11,7 +11,7 @@
 }
 
 .header__container {
-    width: 100%
+  width: 100%;
 }
 
 .header__black {
@@ -46,7 +46,6 @@
 
 @media screen and (max-width: 1300px) {
   .header {
-    
   }
 }
 
@@ -91,8 +90,22 @@
     margin: 30px auto 0;
     max-width: 452px;
   }
-  
+
   .header__subtitle {
     margin: 16px 0 122px 0;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .header {
+    max-width: 320px;
+  }
+
+  .header__content {
+    max-width: 320px;
+  }
+
+  .header__content {
+    max-width: 288px;
   }
 }

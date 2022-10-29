@@ -19,7 +19,7 @@
   line-height: 46px;
   align-self: flex-start;
   margin-bottom: 64px;
-  margin-block-start: 0;
+  margin-left: 104px;
 }
 
 .search-results__button {
@@ -44,6 +44,13 @@
   background-color: #e8e8e8;
 }
 
+@media screen and (max-width: 1300px) {
+  .search-results__title {
+    margin-block-start: 0;
+    margin-left: 0;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .search-results {
     padding: 40px 16px;
@@ -61,5 +68,11 @@
     margin: 0 auto;
     text-align: left;
     margin-bottom: 58px;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .search-results {
+    padding: 40px 5px;
   }
 }

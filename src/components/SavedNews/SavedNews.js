@@ -1,7 +1,7 @@
-import React from 'react';
-import NewsCardList from '../NewsCardList/NewsCardList';
+import React from "react";
+import NewsCardList from "../NewsCardList/NewsCardList";
 
-function SavedNews({isHomePage}) {
+function SavedNews({ isHomePage }) {
   return (
     <section className="saved-news">
       <div className="saved-news__container">
@@ -9,6 +9,6 @@ function SavedNews({isHomePage}) {
       </div>
     </section>
   );
-};
+}
 
 export default SavedNews;

@@ -1,8 +1,12 @@
-import React from "react";
-import savebutton from "../../images/save_icon.svg";
-import deletebutton from "../../images/trash_icon.svg";
+import { useState } from "react";
 
-const NewsCard = ({ card, isHomePage }) => {
+function NewsCard({ card, isHomePage }) {
+  const [chageBackground, setChangeBackground] = useState(false);
+
+  function handleChageBackground() {
+    setChangeBackground(!chageBackground);
+  }
+
   return (
     <article className="card">
       <div className="card__image-wrapper">
@@ -14,18 +18,17 @@ const NewsCard = ({ card, isHomePage }) => {
         <p className="card__subtitle">{card.text}</p>
         <p className="card__source">{card.source}</p>
       </div>
-      <button
-        className="card__button"
-        aria-label={isHomePage ? "save article" : "delete article"}
-      >
-        <img
-          className="card__button-icon"
-          src={isHomePage ? savebutton : deletebutton}
-        />
-      </button>
+      <div className="card__button-wrapper">
+        <button
+          className={isHomePage ? "card__button-save" : "card__button-trash"}
+          aria-label={isHomePage ? "save article" : "delete article"}
+          onClick={handleChageBackground}
+          onMouseMove={handleChageBackground}
+        ></button>
+      </div>
       {!isHomePage && <p className="card__keyword">{card.keyword}</p>}
     </article>
   );
-};
+}
 
 export default NewsCard;

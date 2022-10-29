@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 function Preloader(props) {
   return (
@@ -8,7 +8,7 @@ function Preloader(props) {
       </div>
       <p className="preloader__text">Searching for news...</p>
     </section>
-  )
+  );
 }
 
 //export default Preloader;

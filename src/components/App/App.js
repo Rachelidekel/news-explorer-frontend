@@ -30,9 +30,18 @@ function App() {
     setIsPopupOpen(false);
   }
 
+  function handleLogOut() {
+    setIsHomePage(true);
+  }
+
   return (
     <div className="App">
-      <Header isHomePage={isHomePage} cardData={cardData} onSignInClick={handlePopupClick}/>
+      <Header
+        isHomePage={isHomePage}
+        cardData={cardData}
+        onSignInClick={handlePopupClick}
+        onLogOut={handleLogOut}
+      />
       <Switch>
         <Route path="/saved-news">
           <SavedNews isHomePage={isHomePage} />
