@@ -85,7 +85,9 @@ function Navigation({
               className="navigation__button navigation__button_black"
             >
               {" "}
-              <span className="navigation__button-text">Racheli</span>
+              <span className="navigation__button-text navigation__button-text-black">
+                Racheli
+              </span>
               <img
                 src={logOutIconBlack}
                 alt="logout"

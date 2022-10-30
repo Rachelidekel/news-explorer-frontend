@@ -5,11 +5,6 @@ import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
 import SavedNews from "../SavedNews/SavedNews";
 import PopupWithForm from "../PopupWithForm/PopupWithForm";
-//import LoginPopup from "../LoginPopup/LoginPopup";
-//import RegistrationPopup from "../RegistrationPopup/RegistrationPopup";
-//import InfoTooltip from "../InfoTooltip/InfoTooltip";
-//import SaveNews from "../SavedNews/SavedNews";
-//import SaveNewsHeader from "../SavedNewsHeader/SavedNewsHeader";
 
 function App() {
   const [isHomePage, setIsHomePage] = useState();
