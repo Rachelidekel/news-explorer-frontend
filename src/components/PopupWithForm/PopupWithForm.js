@@ -7,7 +7,7 @@ function PopupWithForm({ name, isOpen, onClose, title, buttonText, children }) {
       <h2 className={`popup__title popup__title_type_${name}`}>{title}</h2>
       <form action="submit" className="popup__form" name={name} noValidate>
         {children}
-        <div className="form__control">
+        <div className="popup__form-control">
           <div className="popup__error-container popup__submit-error">
             <span className="popup__field-error form__field-error"></span>
           </div>

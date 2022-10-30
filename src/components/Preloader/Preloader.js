@@ -1,6 +1,6 @@
 import React from "react";
 
-function Preloader(props) {
+function Preloader() {
   return (
     <section className="preloader">
       <div className="preloader__circle-box">

@@ -26,6 +26,37 @@ export function Mobile({ isMobileMenuOpen, onClick, isHomePage, onLogOut }) {
           <span className="navigation__button-text">Sign in</span>
         </button>
       </div>
+
+      {isMobileMenuOpen && !isHomePage ? (
+        <div className="navigation__menu-mobile">
+          <ul className="navigation__menu-list navigation__menu-list_mobile">
+            <li className="navigation__menu-item">
+              <Link to="/" className="navigation__link_black">
+                Home
+              </Link>
+            </li>
+            <li className="navigation__menu-item">
+              <Link to="/saved-news" className="navigation__link_black">
+                Saved articles
+              </Link>
+            </li>
+          </ul>
+          <button
+            onClick={onLogOut}
+            type="button"
+            className="navigation__button navigation__button_black"
+          >
+            <span className="navigation__button-text">Racheli</span>
+            <img
+              src={logOutIconBlack}
+              alt="logout"
+              className="navigation__button-icon"
+            />
+          </button>
+        </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 }
