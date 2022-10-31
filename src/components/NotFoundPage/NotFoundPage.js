@@ -19,4 +19,4 @@ function NotFoundPage(props) {
   );
 }
 
-//export default NotFoundPage;
+export default NotFoundPage;

@@ -4,12 +4,14 @@ import Header from "../Header/Header";
 import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
 import SavedNews from "../SavedNews/SavedNews";
-import PopupWithForm from "../PopupWithForm/PopupWithForm";
+import LoginPopup from "../Login/Login";
+import RegisterPopup from "../Register/Register";
 
 function App() {
   const [isHomePage, setIsHomePage] = useState();
   const [cardData, setCardData] = useState([]);
-  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [isLoginPopupOpen, setIsLoginPopupOpen] = useState(false);
+  const [isRegisterPopupOpen, setIsRegisterPopupOpen] = useState(false);
 
   const location = useLocation();
 
@@ -17,16 +19,31 @@ function App() {
     location.pathname !== "/" ? setIsHomePage(false) : setIsHomePage(true);
   }, [location]);
 
-  function handlePopupClick() {
-    setIsPopupOpen(true);
+  function handleSinginClick() {
+    setIsLoginPopupOpen(true);
   }
 
-  function closePopup() {
-    setIsPopupOpen(false);
+  function closeAllPopups() {
+    setIsLoginPopupOpen(false);
+    setIsRegisterPopupOpen(false);
   }
 
   function handleLogOut() {
     setIsHomePage(true);
+  }
+
+  function handleRedirect() {
+    if (isRegisterPopupOpen) {
+      closeAllPopups();
+      setIsLoginPopupOpen(true);
+      setIsRegisterPopupOpen(false);
+    } else if (isLoginPopupOpen) {
+      closeAllPopups();
+      setIsRegisterPopupOpen(true);
+      setIsLoginPopupOpen(false);
+    } else {
+      setIsLoginPopupOpen(true);
+    }
   }
 
   return (
@@ -34,7 +51,7 @@ function App() {
       <Header
         isHomePage={isHomePage}
         cardData={cardData}
-        onSignInClick={handlePopupClick}
+        onSignInClick={handleSinginClick}
         onLogOut={handleLogOut}
       />
       <Switch>
@@ -46,7 +63,16 @@ function App() {
         </Route>
       </Switch>
       <Footer />
-      <PopupWithForm isOpen={isPopupOpen} onClose={closePopup} />
+      <LoginPopup
+        isOpen={isLoginPopupOpen}
+        onClose={closeAllPopups}
+        onRedirect={handleRedirect}
+      />
+      <RegisterPopup
+        isOpen={isRegisterPopupOpen}
+        onClose={closeAllPopups}
+        onRedirect={handleRedirect}
+      />
     </div>
   );
 }

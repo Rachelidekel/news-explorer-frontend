@@ -4,53 +4,41 @@ import PopupWithForm from "../PopupWithForm/PopupWithForm";
 function LoginPopup({ isOpen, onClose, onRedirect }) {
   return (
     <PopupWithForm
-      title="Sign up"
-      submitText="Sign up"
-      redirectText="Sign in"
+      title="Sign in"
+      name="signin"
+      submitText="Sign in"
+      redirectText="Sign up"
       isOpen={isOpen}
       onClose={onClose}
       onRedirect={onRedirect}
-      onRegisterSubmit={onRegisterSubmit}
-      isValid={isValid}
-      email={values.email}
-      password={values.password}
-      username={values.username}
-      resetForm={resetForm}
-      isSingUpError={isSingUpError}
+      buttonText="sign in"
     >
       <div className="popup__field-container">
-        <label className="popup__field">Email</label>
+        <label className="popup__field-description">Email</label>
         <input
-          onChange={handleChange}
           name="email"
-          value={values.email || ""}
           autoComplete="off"
-          className="popup__input"
+          className="popup__field"
           type="email"
           placeholder="Enter email"
           required
         />
-        <span className="popup__field-error popup__field-error_email">
-          {errors.email}
-        </span>
-        <label className="popup__field">Password</label>
+        <span className="popup__field-error popup__field-error_email"></span>
+
+        <label className="popup__field-description">Password</label>
         <input
-          onChange={handleChange}
           name="password"
-          value={values.password || ""}
           autoComplete="off"
-          className="popup__input"
+          className="popup__field"
           type="password"
           placeholder="Enter password"
           minLength="8"
           required
         />
-        <span className="popup__field-error popup__field-error_password">
-          {errors.password}
-        </span>
+        <span className="popup__field-error popup__field-error_password"></span>
       </div>
     </PopupWithForm>
   );
 }
 
-export default LoginPopup
+export default LoginPopup;
