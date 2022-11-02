@@ -137,6 +137,10 @@
   background-color: #347eff;
 }
 
+.popup__form-button:active {
+  background-color: #2a65cc;
+}
+
 .popup__form-button_disabled {
   background-color: #e6e8eb;
   color: #b6bcbf;
@@ -167,7 +171,11 @@
 }
 
 .popup__redirect-link:hover {
-  color: blue;
+  color: #347eff;
+}
+
+.popup__redirect-link:active {
+  color: #2a65cc;
 }
 
 @media screen and (max-width: 1106px) {
