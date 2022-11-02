@@ -60,7 +60,11 @@ function App() {
           <SavedNews isHomePage={isHomePage} />
         </Route>
         <Route exact path="/">
-          <Main isHomePage={isHomePage} cardData={cardData} />
+          <Main
+            isHomePage={isHomePage}
+            cardData={cardData}
+            setCardData={setCardData}
+          />
         </Route>
       </Switch>
       <Footer />
