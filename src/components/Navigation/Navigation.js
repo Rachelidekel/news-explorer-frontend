@@ -42,11 +42,11 @@ function Navigation({
                     ? "navigation__link"
                     : "navigation__link navigation__link_black"
                 }
-                activeClassName={` ${
+                activeClassName={
                   isHomePage
                     ? "navigation__link-active"
                     : "navigation__link-active navigation__link-active_black"
-                }`}
+                }
               >
                 Home
               </NavLink>
@@ -59,11 +59,11 @@ function Navigation({
                     ? "navigation__link"
                     : "navigation__link navigation__link_black"
                 }
-                activeClassName={` ${
+                activeClassName={
                   isHomePage
                     ? "navigation__link-active"
-                    : "navigation__link-active nav__link-active_black"
-                }`}
+                    : "navigation__link-active navigation__link-active_black"
+                }
               >
                 Saved articles
               </NavLink>

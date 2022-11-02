@@ -10,7 +10,7 @@ function NewsCard({ card, isHomePage }) {
   return (
     <article className="card">
       <div className="card__image-wrapper">
-        <img className="card__image" src={card.image} alt="" />
+        <img className="card__image" src={card.image} alt={card.title} />
       </div>
       <div className="card__text-container">
         <p className="card__date">{card.date}</p>
@@ -18,14 +18,12 @@ function NewsCard({ card, isHomePage }) {
         <p className="card__subtitle">{card.text}</p>
         <p className="card__source">{card.source}</p>
       </div>
-      <div className="card__button-wrapper">
-        <button
-          className={isHomePage ? "card__button-save" : "card__button-trash"}
-          aria-label={isHomePage ? "save article" : "delete article"}
-          onClick={handleChageBackground}
-          onMouseMove={handleChageBackground}
-        ></button>
-      </div>
+      <button
+        className={isHomePage ? "card__button-save" : "card__button-trash"}
+        aria-label={isHomePage ? "save article" : "delete article"}
+        onClick={handleChageBackground}
+        onMouseMove={handleChageBackground}
+      ></button>
       {!isHomePage && <p className="card__keyword">{card.keyword}</p>}
     </article>
   );

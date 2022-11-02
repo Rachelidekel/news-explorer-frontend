@@ -5,14 +5,14 @@ import logOutIconBlack from "../../images/logout_icon_black.svg";
 export function Mobile({ isMobileMenuOpen, onClick, isHomePage, onLogOut }) {
   return (
     <div
-      className={`navigation__mobile-menu ${
-        isMobileMenuOpen ? "navigation__mobile-menu_opened" : ""
+      className={`header__mobile-menu ${
+        isMobileMenuOpen ? "header__mobile-menu_opened" : ""
       }`}
       style={{ backgroundColor: isHomePage ? "#1a1b22" : "#ffffff" }}
     >
       {isHomePage ? (
         <div className="navigation__menu-mobile">
-          <ul className="navigation__menu-list navigation__menu-list_mobile">
+          <ul className="navigation__menu-list navigation__menu-list_type_mobile">
             <li className="navigation__menu-item">
               <Link to="/" className="navigation__link">
                 Home
@@ -34,7 +34,7 @@ export function Mobile({ isMobileMenuOpen, onClick, isHomePage, onLogOut }) {
         </div>
       ) : (
         <div className="navigation__menu-mobile">
-          <ul className="navigation__menu-list navigation__menu-list_mobile">
+          <ul className="navigation__menu-list navigation__menu-list_type_mobile">
             <li className="navigation__menu-item">
               <Link to="/" className="navigation__link_black">
                 Home

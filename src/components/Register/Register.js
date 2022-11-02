@@ -33,8 +33,8 @@ function RegisterPopup({ isOpen, onClose, onRedirect }) {
           className="popup__field popup__field-signup"
           type="password"
           placeholder="Enter password"
-          minLength="8"
           required
+          minLength="8"
         />
         <div className="popup__error-container">
           <span className="popup__field-error password-field-error"></span>

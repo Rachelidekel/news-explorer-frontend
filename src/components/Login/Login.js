@@ -32,8 +32,8 @@ function LoginPopup({ isOpen, onClose, onRedirect }) {
           className="popup__field"
           type="password"
           placeholder="Enter password"
-          minLength="8"
           required
+          minLength="8"
         />
         <span className="popup__field-error popup__field-error_password"></span>
       </div>

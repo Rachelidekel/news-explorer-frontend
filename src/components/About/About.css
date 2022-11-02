@@ -63,7 +63,7 @@
   .about__title {
     font-size: 30px;
     line-height: 40px;
-    margin: 40px 0 0;
+    margin: 0;
   }
 
   .about__content {
@@ -89,9 +89,15 @@
   }
 }
 
+@media screen and (max-width: 680px) {
+  .about {
+    height: 400px;
+  }
+}
+
 @media screen and (max-width: 550px) {
   .about {
-    height: 100vh;
+    height: 752px;
     flex-direction: column;
     align-items: center;
   }

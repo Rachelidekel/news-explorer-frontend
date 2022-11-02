@@ -20,6 +20,7 @@
   align-items: center;
   margin-right: 104px;
   margin-left: 104px;
+  height: 80px;
 }
 
 .navigation__wrapper-bg {
@@ -34,6 +35,7 @@
   align-items: center;
   padding-right: 16px;
   padding-left: 16px;
+  height: 60px;
 }
 
 .navigation__logo {
@@ -48,7 +50,7 @@
 .navigation__menu {
   display: flex;
   align-items: center;
-  gap: 60px;
+  gap: 64px;
   font-family: "Roboto", Arial, Helvetica, sans-serif;
   font-weight: 500;
   text-decoration: none;
@@ -58,7 +60,7 @@
 .navigation__menu-list {
   display: flex;
   align-items: center;
-  gap: 70px;
+  gap: 76px;
   list-style: none;
   margin-block-start: 0;
   margin-block-end: 0;
@@ -70,8 +72,8 @@
   font-weight: 500;
   text-decoration: none;
   cursor: pointer;
-  color: #fff;
-  padding-bottom: 20px;
+  color: #ffffff;
+  padding-bottom: 30px;
   padding-top: 20px;
 }
 
@@ -79,6 +81,7 @@
   box-shadow: 0 -2px 0 0 rgb(255, 255, 255) inset;
   -webkit-box-shadow: 0 -2px 0 0 rgb(255, 255, 255) inset;
   -moz-box-shadow: 0 -2px 0 0 rgb(255, 255, 255) inset;
+  margin-top: 17px;
 }
 
 .navigation__link-active_black {
@@ -88,8 +91,12 @@
 }
 
 .navigation__link_black {
-  color: #000000;
+  color: #1a1b22;
   text-decoration-line: none;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
 }
 
 .navigation__button {
@@ -118,6 +125,18 @@
   font-size: 16px;
   font-weight: 500;
   line-height: 24px;
+  text-align: center;
+  max-width: 128px;
+}
+
+.navigation__button-text-black {
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: left;
+  max-width: 35px;
+  color: #1a1b22;
 }
 
 .navigation__button_black {
@@ -131,8 +150,6 @@
   display: flex;
   align-items: center;
   cursor: pointer;
-  font-family: "Roboto", Arial, Helvetica, sans-serif;
-  font-weight: 500;
   text-decoration: none;
   border: 1px solid #1a1b22;
 }
@@ -144,6 +161,7 @@
 .navigation__button-icon {
   width: 17px;
   height: 17px;
+  margin-left: 17px;
 }
 
 .navigation__hamburger {
@@ -161,10 +179,6 @@
   opacity: 0.6;
 }
 
-.navigation__mobile-menu {
-  display: none;
-}
-
 .navigation__menu-mobile {
   display: flex;
   flex-direction: column;
@@ -172,17 +186,7 @@
   align-items: center;
 }
 
-.navigation__mobile-menu_opened {
-  display: flex;
-  padding-top: 24px;
-  padding-bottom: 24px;
-}
-
-.navigation__mobile-menu_opened-white {
-  background-color: #ffffff;
-}
-
-.navigation__menu-list_mobile {
+.navigation__menu-list_type_mobile {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -219,23 +223,21 @@
   opacity: 0.6;
 }
 
-@media screen and (max-width: 1300px) {
-  .navigation__wrapper {
-    margin-right: 40px;
-    margin-left: 40px;
+@media screen and (max-width: 900px) {
+  .navigation__menu {
+    gap: 16px;
   }
-}
 
-@media screen and (max-width: 1024px) {
   .navigation__menu-list {
-    gap: 50px;
+    gap: 16px;
   }
 }
 
 @media screen and (max-width: 768px) {
   .navigation__wrapper {
-    margin-right: 16px;
-    margin-left: 16px;
+    margin-right: 40px;
+    margin-left: 40px;
+    height: 66px;
   }
 
   .navigation__button {
@@ -246,6 +248,10 @@
   .navigation__button_black {
     width: 100px;
     height: 40px;
+  }
+
+  .navigation__link {
+    padding-bottom: 25px;
   }
 }
 
@@ -259,20 +265,12 @@
     margin-left: 16px;
   }
 
-  .navigation__menu_hamburger-opened {
-    display: flex;
-  }
-
   .navigation__logo {
     padding-top: 16px;
     padding-bottom: 16px;
   }
 
   .navigation__hamburger {
-    display: block;
-  }
-
-  .navigation__mobile {
     display: block;
   }
 
@@ -296,14 +294,22 @@
   }
 
   .navigation__button_black {
-    width: 288px;
+    width: 230px;
     height: 56px;
-    margin-left: 10px;
   }
 
   .navigation__button-text-black {
-    margin-left: 70px;
-    margin-right: 30px;
+    margin-left: 40px;
+    margin-right: 20px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .navigation__wrapper {
+    padding-left: 16px;
+    padding-right: 16px;
+    height: 56px;
+    margin: 0;
   }
 }
 
@@ -312,10 +318,8 @@
     width: 288px;
     font-size: 18px;
   }
-}
 
-@media screen and (max-width: 330px) {
   .navigation__button_black {
-    margin-left: 5px;
+    width: 230px;
   }
 }

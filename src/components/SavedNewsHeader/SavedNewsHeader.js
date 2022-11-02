@@ -6,10 +6,10 @@ function SavedNewsHeader() {
   const uniqueKeywords = [...new Set(keywords)];
 
   return (
-    <header className="news-header">
+    <div className="news-header">
       <h1 className="news-header__title">Saved articles</h1>
       <p className="news-header__subtitle">
-        You have {data.length} saved articles
+        Racheli, You have {data.length} saved articles
       </p>
       <p className="news-header__keywords">
         By keywords:{" "}
@@ -22,7 +22,7 @@ function SavedNewsHeader() {
               " more"}
         </span>
       </p>
-    </header>
+    </div>
   );
 }
 

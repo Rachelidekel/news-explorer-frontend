@@ -53,6 +53,7 @@ function App() {
         cardData={cardData}
         onSignInClick={handleSinginClick}
         onLogOut={handleLogOut}
+        isOpen={isLoginPopupOpen || isRegisterPopupOpen}
       />
       <Switch>
         <Route path="/saved-news">
