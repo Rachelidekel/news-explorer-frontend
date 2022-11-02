@@ -14,9 +14,9 @@
   margin-block-end: 0;
   margin-block-start: 0;
   margin-bottom: 28px;
-  max-height: 530px;
+  max-width: 712px;
   text-align: left;
-  font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
 }
 
 .news-header__subtitle {
@@ -37,10 +37,16 @@
   font-size: 18px;
   line-height: 24px;
   margin: 0;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  text-align: left;
 }
 
 .news-header__keywords-bold {
   font-weight: 700;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: left;
 }
 
 @media screen and (max-width: 800px) {
@@ -81,6 +87,7 @@
 
   .news-header__title {
     font-size: 12px;
+    max-width: 288px;
   }
 
   .news-header__subtitle {

@@ -22,6 +22,7 @@ function Footer() {
             <a
               className="footer__link"
               target="_blank"
+              rel="noreferrer"
               href="https://practicum.com/"
             >
               Practicum
@@ -33,6 +34,7 @@ function Footer() {
             <a
               className="footer__link"
               target="_blank"
+              rel="noreferrer"
               href="https://github.com/Rachelidekel"
             >
               <img
@@ -46,6 +48,7 @@ function Footer() {
             <a
               className="footer__link"
               target="_blank"
+              rel="noreferrer"
               href="https://www.facebook.com/profile.php?id=1789225613"
             >
               <img

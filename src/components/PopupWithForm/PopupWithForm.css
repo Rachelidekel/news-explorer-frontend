@@ -158,23 +158,25 @@
   text-align: center;
   color: #000;
   font-family: "Inter", sans-serif;
-  font-weight: 400;
+  font-weight: 500px;
   font-size: 14px;
   line-height: 1.2;
   margin-bottom: 28px;
 }
 
 .popup__redirect-link {
+  font-weight: 400px;
   color: #2f71e5;
   cursor: pointer;
+  transition: opacity 0.3s ease-in-out;
   margin-left: 3px;
 }
 
 .popup__redirect-link:hover {
-  color: #347eff;
+  opacity: 0.7;
 }
 
-.popup__redirect-link:active {
+.popup__redirect-link:focus {
   color: #2a65cc;
 }
 

@@ -23,7 +23,7 @@ function LoginPopup({ isOpen, onClose, onRedirect }) {
           placeholder="Enter email"
           required
         />
-        <span className="popup__field-error popup__field-error_email"></span>
+        <span className="popup__field-error popup__field-error_type_email"></span>
 
         <label className="popup__field-description">Password</label>
         <input
@@ -35,7 +35,7 @@ function LoginPopup({ isOpen, onClose, onRedirect }) {
           required
           minLength="8"
         />
-        <span className="popup__field-error popup__field-error_password"></span>
+        <span className="popup__field-error popup__field-error_type_password"></span>
       </div>
     </PopupWithForm>
   );
