@@ -62,22 +62,6 @@
   text-align: left;
 }
 
-.header__mobile-menu {
-  display: none;
-}
-
-.header__mobile-menu_opened {
-  display: flex;
-  padding-top: 24px;
-  padding-bottom: 24px;
-  padding-left: 30px;
-  opacity: 1;
-}
-
-.header__mobile-menu_opened-white {
-  background-color: #ffffff;
-}
-
 @media screen and (max-width: 1050px) {
   .header {
     background-image: url("../../images/background_tablet.png");
@@ -101,14 +85,6 @@
 
   .header__subtitle {
     margin: 16px 0 48px 0;
-  }
-}
-
-@media screen and (max-width: 510px) {
-  .header__mobile-menu_opened {
-    padding-top: 16px;
-    padding-bottom: 24px;
-    padding-left: 16px;
   }
 }
 

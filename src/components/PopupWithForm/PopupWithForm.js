@@ -23,12 +23,16 @@ function PopupWithForm({
         >
           {buttonText}
         </button>
-        <p className="popup__redirect">
-          or
-          <span className="popup__redirect-link" onClick={onRedirect}>
+        <div className="popup__redirect">
+          <span>or</span>
+          <button
+            type="button"
+            className="popup__redirect-link"
+            onClick={onRedirect}
+          >
             {redirectText}
-          </span>
-        </p>
+          </button>
+        </div>
       </form>
     </Popup>
   );

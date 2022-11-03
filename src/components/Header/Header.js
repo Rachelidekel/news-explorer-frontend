@@ -2,7 +2,6 @@ import { useState } from "react";
 import Navigation from "../Navigation/Navigation";
 import SavedNewsHeader from "../SavedNewsHeader/SavedNewsHeader";
 import SearchForm from "../SearchForm/SearchForm";
-import Mobile from "../Mobile/Mobile";
 
 function Header({ isHomePage, cardData, onSignInClick, onLogOut, isOpen }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -22,15 +21,9 @@ function Header({ isHomePage, cardData, onSignInClick, onLogOut, isOpen }) {
         <Navigation
           isHomePage={isHomePage}
           onClick={onSignInClick}
-          isMoblieMenuOpen={isMobileMenuOpen}
+          isMobileMenuOpen={isMobileMenuOpen}
           handleMobileMenu={handleMobileMenu}
           onLogOut={onLogOut}
-        />
-        <Mobile
-          onClick={onSignInClick}
-          isMobileMenuOpen={isMobileMenuOpen}
-          onLogOut={onLogOut}
-          isHomePage={isHomePage}
         />
       </div>
       {isHomePage ? (

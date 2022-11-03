@@ -1,5 +1,6 @@
 .search-form {
   position: relative;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
 }
 
 .seach-form__wrapper {
@@ -42,7 +43,7 @@
   background: rgba(47, 113, 229, 1);
   cursor: pointer;
   border-radius: 50px;
-  color: #fff;
+  color: #ffffff;
   font-family: "Roboto", Arial, Helvetica, sans-serif;
   font-size: 18px;
   font-weight: 500;

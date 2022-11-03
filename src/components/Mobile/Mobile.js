@@ -4,9 +4,9 @@ import logOutIconBlack from "../../images/logout_icon_black.svg";
 
 export function Mobile({ isMobileMenuOpen, onClick, isHomePage, onLogOut }) {
   return (
-    <nav
-      className={`header__mobile-menu ${
-        isMobileMenuOpen ? "header__mobile-menu_opened" : ""
+    <div
+      className={`navigation__mobile-menu ${
+        isMobileMenuOpen ? "navigation__mobile-menu_opened" : ""
       }`}
       style={{ backgroundColor: isHomePage ? "#1a1b22" : "#ffffff" }}
     >
@@ -62,7 +62,7 @@ export function Mobile({ isMobileMenuOpen, onClick, isHomePage, onLogOut }) {
           </button>
         </div>
       )}
-    </nav>
+    </div>
   );
 }
 export default Mobile;

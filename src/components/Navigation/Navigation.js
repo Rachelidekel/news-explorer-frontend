@@ -7,25 +7,27 @@ import logOutIconBlack from "../../images/logout_icon_black.svg";
 import hbMenuWhite from "../../images/menu_icon_white.svg";
 import hbMenuBlack from "../../images/menu_icon_black.svg";
 import closeIcon from "../../images/close_icon.svg";
+import Mobile from "../Mobile/Mobile";
 
 function Navigation({
   onLogOut,
   isHomePage,
   onClick,
-  isMoblieMenuOpen,
+  isMobileMenuOpen,
   handleMobileMenu,
 }) {
   return (
     <nav
       className={isHomePage ? "navigation" : "navigation_type_save-articles"}
+      style={{ borderBottom: isMobileMenuOpen ? "none" : "" }}
     >
       <div
         className={
-          !isMoblieMenuOpen
+          !isMobileMenuOpen
             ? "navigation__wrapper"
             : "navigation__wrapper-bg" && isHomePage
             ? "navigation__wrapper-bg"
-            : "navigation__wrapper"
+            : "navigation__wrapper navigation__wrapper_type_save-articles"
         }
       >
         <Link className="navigation__logo" to="/">
@@ -101,7 +103,7 @@ function Navigation({
           className="navigation__hamburger"
           onClick={handleMobileMenu}
         >
-          {!isMoblieMenuOpen ? (
+          {!isMobileMenuOpen ? (
             <img
               src={isHomePage ? hbMenuWhite : hbMenuBlack}
               alt="hamburger-icon"
@@ -120,6 +122,12 @@ function Navigation({
           )}
         </button>
       </div>
+      <Mobile
+        onClick={onClick}
+        isMobileMenuOpen={isMobileMenuOpen}
+        onLogOut={onLogOut}
+        isHomePage={isHomePage}
+      />
     </nav>
   );
 }
