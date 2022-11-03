@@ -1,0 +1,40 @@
+.popup__tooltip-title {
+  padding: 43px 0 0;
+  max-width: 315px;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 28px;
+  text-align: left;
+}
+
+.popup__tooltip-link {
+  width: 360px;
+  padding-top: 14px;
+  margin: 0;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.2;
+  color: #2f71e5;
+  cursor: pointer;
+  margin-bottom: 47px;
+  text-align: left;
+}
+
+@media screen and (max-width: 1106px) {
+  .popup__tooltip-link {
+    width: 358px;
+  }
+}
+
+@media screen and (max-width: 490px) {
+  .popup__tooltip-title {
+    font-size: 22px;
+  }
+
+  .popup__tooltip-link {
+    width: 100%;
+    font-size: 16px;
+  }
+}

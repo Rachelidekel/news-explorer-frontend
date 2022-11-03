@@ -1,0 +1,129 @@
+.header {
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  background-image: url(../../images/background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding-bottom: 80px;
+}
+
+.header__wrapper {
+  width: 100%;
+}
+
+.header__wrapper-sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  content: " ";
+  display: block;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+  cursor: auto;
+}
+
+.header__wrapper-sticky::before {
+  position: fixed;
+}
+
+.header__black {
+  background-image: none;
+  color: black;
+}
+
+.header__content {
+  max-width: 608px;
+  margin: 80px auto 0;
+}
+
+.header__title {
+  font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 64px;
+  margin: 0;
+}
+
+.header__subtitle {
+  margin: 32px 0 88px 0;
+  max-width: 608px;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+@media screen and (max-width: 1050px) {
+  .header {
+    background-image: url("../../images/background_tablet.png");
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    padding-bottom: 48px;
+  }
+
+  .header__title {
+    font-size: 36px;
+    line-height: 40px;
+  }
+
+  .header__content {
+    margin: 38px auto 0;
+    max-width: 452px;
+  }
+
+  .header__subtitle {
+    margin: 16px 0 48px 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .header {
+    background-image: url("../../images/background_mobile.png");
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .header {
+    padding-bottom: 32px;
+    height: 536px;
+  }
+
+  .header__content {
+    margin: 30px auto 0;
+    max-width: 452px;
+  }
+
+  .header__subtitle {
+    margin: 16px 0 122px 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .header__content {
+    max-width: 320px;
+  }
+
+  .header__content {
+    max-width: 288px;
+  }
+
+  .header__title {
+    max-width: 285px;
+  }
+
+  .header__subtitle {
+    max-width: 288px;
+  }
+}
