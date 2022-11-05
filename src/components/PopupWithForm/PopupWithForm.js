@@ -37,6 +37,7 @@ function PopupWithForm({
         className="popup__form"
         name={name}
         onSubmit={handleOnRegister}
+        noValidate
       >
         {children}
         <div className="popup__form-control"></div>

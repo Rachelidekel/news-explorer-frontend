@@ -5,6 +5,7 @@ function SearchResults({
   isHomePage,
   isLoggedIn,
   cards,
+  savedCards,
   handleSaveArticleSubmit,
   handleDeleteSavedArticleSubmit,
   handleShowMoreClick,
@@ -24,6 +25,7 @@ function SearchResults({
         <NewsCardList
           isHomePage={isHomePage}
           cards={cards}
+          savedCards={savedCards}
           tooltipText="Sign in to save articles"
           moreCards={moreCards}
           isMore={isMore}
@@ -31,7 +33,7 @@ function SearchResults({
           handleSaveArticleSubmit={handleSaveArticleSubmit}
           handleDeleteSavedArticleSubmit={handleDeleteSavedArticleSubmit}
         />
-        {moreCards.length  < 94 ? (
+        {moreCards.length !== cards.length ? (
           <button
             className="search-results__button"
             onClick={handleShowMorePosts}

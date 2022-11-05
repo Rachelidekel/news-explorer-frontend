@@ -11,15 +11,15 @@ function NewsCardList({
 }) {
   return (
     <ul className="cards">
-      {cards.map((card) => (
-        <li key={card._id}>
+      {cards.slice(0, 3).map((card) => (
+        <li  key={card._id}>
           <NewsCard
             card={card}
             isHomePage={isHomePage}
             isLoggedIn={isLoggedIn}
             imageSrc={card.urlToImage}
             cardTitle={card.title}
-            cardSubtitle={card.descrition}
+            cardSubtitle={card.description}
             cardSurce={card.source.name}
             handleSaveArticleSubmit={handleSaveArticleSubmit}
             handleDeleteSavedArticleSubmit={handleDeleteSavedArticleSubmit}

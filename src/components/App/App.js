@@ -229,7 +229,6 @@ function App() {
   }
 
   function handleSaveArticleSubmit(
-    keyword,
     title,
     text,
     date,
@@ -342,14 +341,14 @@ function App() {
           isOpen={isLoginPopupOpen}
           onClose={closeAllPopups}
           onRedirect={handleRedirect}
-          onRegisterSubmit={handleRegisterSubmitClick}
+          onLoginSubmit={handleLoginSubmitClick}
           isAuthError={isAuthError}
         />
         <RegisterPopup
           isOpen={isRegisterPopupOpen}
           onClose={closeAllPopups}
           onRedirect={handleRedirect}
-          onLoginSubmit={handleLoginSubmitClick}
+          onRegisterSubmit={handleRegisterSubmitClick}
           isAuthError={isAuthError}
         />
       </div>
