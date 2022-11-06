@@ -17,7 +17,7 @@ const past7Days = [...Array(7).keys()].map((index) => {
 
 export const getNews = (keyword) => {
   return customFetch(
-    `${NEWS_URL}/news/v2/everything?q=${keyword}&from=${past7Days[6]}&to=${past7Days[0]}&pageSize=100&apiKey=${API_KEY}`
+    `${NEWS_URL}/v2/everything?q=${keyword}&from=${past7Days[6]}&to=${past7Days[0]}&pageSize=100&apiKey=${API_KEY}`
   );
 };
 

@@ -10,14 +10,14 @@ class Api {
     );
   };
 
-  register = (email, password, username) => {
+  register = (email, password, name) => {
     return this._customFetch(`${this._baseUrl}/signup`, {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
       method: "POST",
-      body: JSON.stringify({ email, password, username }),
+      body: JSON.stringify({ email, password, name }),
     });
   };
 
