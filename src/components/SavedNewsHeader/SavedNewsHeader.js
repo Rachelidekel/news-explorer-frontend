@@ -1,5 +1,4 @@
 import { useContext } from "react";
-//import { data } from "../../utils/data";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 
 function SavedNewsHeader({ savedCards, topOfKeywords }) {
@@ -11,8 +10,7 @@ function SavedNewsHeader({ savedCards, topOfKeywords }) {
     <div className="news-header">
       <h1 className="news-header__title">Saved articles</h1>
       <p className="news-header__subtitle">
-        {currentUser.name}
-        You have {savedCards.length} saved articles
+        {currentUser.name}, You have {savedCards.length} saved articles
       </p>
       <p className="news-header__keywords">
         By keywords:

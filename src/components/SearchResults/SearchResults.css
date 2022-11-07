@@ -44,6 +44,10 @@
   background-color: #e8e8e8;
 }
 
+.search-results__button-hidden {
+  display: none;
+}
+
 @media screen and (max-width: 1300px) {
   .search-results__title {
     margin-block-start: 0;

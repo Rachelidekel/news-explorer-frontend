@@ -38,13 +38,40 @@ function Mobile({
               ""
             )}
           </ul>
-          <button
-            onClick={onClick}
-            type="button"
-            className="navigation__button"
-          >
-            <span className="navigation__button-text">Sign in</span>
-          </button>
+          {!isLoggedIn ? (
+            <button
+              onClick={onClick}
+              type="button"
+              className="navigation__button"
+            >
+              <span className="navigation__button-text">Sign in</span>
+            </button>
+          ) : (
+            <button
+              onClick={onLogOut}
+              type="button"
+              className={`${
+                isHomePage
+                  ? "navigation__button navigation__button_white"
+                  : "navigation__button navigation__button_black"
+              }`}
+            >
+              <span
+                className={`${
+                  isHomePage
+                    ? "navigation__button-text navigation__button-text-white"
+                    : "navigation__button-text navigation__button-text-black"
+                }`}
+              >
+                {currentUser.name}
+              </span>
+              <img
+                src={isHomePage ? logOutIconWhite : logOutIconBlack}
+                alt="logout"
+                className="navigation__button-icon"
+              />
+            </button>
+          )}
         </div>
       ) : (
         <div className="navigation__menu-mobile">

@@ -6,6 +6,7 @@ import NotFoundPage from "../NotFoundPage/NotFoundPage";
 import ReceivingError from "../ReceivingError/ReceivingError";
 
 function Main({
+  token,
   cards,
   isHomePage,
   isLoggedIn,
@@ -16,18 +17,22 @@ function Main({
   isNothingFoundOpen,
   isPreloaderOpen,
   moreCards,
+  isSearchResultOpen,
 }) {
   return (
     <main className="main">
-      <SearchResults
-        cards={cards}
-        moreCards={moreCards}
-        isHomePage={isHomePage}
-        isLoggedIn={isLoggedIn}
-        handleSaveArticleSubmit={handleSaveArticleSubmit}
-        handleShowMoreClick={handleShowMoreClick}
-        handleDeleteSavedArticleSubmit={handleDeleteSavedArticleSubmit}
-      />
+      {isSearchResultOpen ? (
+        <SearchResults
+          token={token}
+          cards={cards}
+          moreCards={moreCards}
+          isHomePage={isHomePage}
+          isLoggedIn={isLoggedIn}
+          handleSaveArticleSubmit={handleSaveArticleSubmit}
+          handleShowMoreClick={handleShowMoreClick}
+          handleDeleteSavedArticleSubmit={handleDeleteSavedArticleSubmit}
+        />
+      ) : undefined}
       {isReceivingError ? <ReceivingError /> : undefined}
 
       {isPreloaderOpen ? <Preloader /> : undefined}

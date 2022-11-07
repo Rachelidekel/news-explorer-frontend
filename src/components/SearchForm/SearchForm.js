@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useFormAndValidation } from "../../hooks/UseForm";
+import { useFormAndValidation } from "../../Hooks/UseForm";
 
 function SearchForm({ onSearchClick }) {
   const { values, handleChange } = useFormAndValidation();
@@ -16,7 +16,7 @@ function SearchForm({ onSearchClick }) {
   }
 
   return (
-    <form className="search-form" onSubmit={handleSearchSubmit}>
+    <form className="search-form" onSubmit={handleSearchSubmit} noValidate>
       <div className="seach-form__wrapper">
         <input
           className="search-form__input"

@@ -13,6 +13,10 @@
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.079);
 }
 
+.card__link{
+  text-decoration: none;
+}
+
 .card__image-wrapper {
   width: 100%;
   background-position: center;
@@ -155,6 +159,41 @@
   margin-top: 0;
 }
 
+.card__item_absolute {
+  height: 40px;
+  top: 24px;
+  background-color: #fff;
+  border: none;
+  border-radius: 10px;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+}
+
+.card__tooltip {
+  opacity: 0;
+  right: 69px;
+  top: 24px;
+  padding: 11px 20px;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  transition: opacity 0.2s linear;
+  color: #000000;
+  width: 142px;
+  height: 18px;
+  text-align: center;
+}
+
+.card__button-save:hover + .card__tooltip {
+  opacity: 1;
+}
+
+.card__button-trash:hover + .card__tooltip {
+  opacity: 1;
+}
+
 @media screen and (max-width: 786px) {
   .card {
     max-width: 224px;
@@ -215,6 +254,16 @@
   .card__keyword {
     top: 8px;
     left: 8px;
+  }
+
+  .card__tooltip {
+    width: 126px;
+    right: 50px;
+    padding: 11px 10px;
+  }
+
+  .card__item_absolute {
+    top: 8px;
   }
 }
 

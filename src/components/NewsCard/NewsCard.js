@@ -2,13 +2,17 @@ import { useState } from "react";
 
 function NewsCard({
   card,
+  token,
+  cardKeywrod,
   imageSrc,
   cardTitle,
   cardSubtitle,
   cardSurce,
-  cardKeywrod,
+  cardDate,
+  cardLink,
   isHomePage,
   isLoggedIn,
+  tooltipText,
   handleSaveArticleSubmit,
   handleDeleteSavedArticleSubmit,
 }) {
@@ -64,41 +68,57 @@ function NewsCard({
   //setIsHover(false);
   //};
 
-  const handleSaveArticleClick = () => {
+  function handleSaveArticleClick(e) {
+    e.preventDefault();
     if (isHomePage && isMarkedArticle === false) {
-      handleSaveArticleSubmit(card);
+      handleSaveArticleSubmit(
+        cardTitle,
+        cardSubtitle,
+        cardDate,
+        cardSurce,
+        cardLink,
+        imageSrc,
+        token
+      );
       if (isLoggedIn) {
         setIsMarkedArticle(true);
         handleChageBackground();
       }
     } else if (isHomePage && isMarkedArticle === true) {
-      handleDeleteSavedArticleSubmit(card);
+      handleDeleteSavedArticleSubmit(card._id, token);
       setIsMarkedArticle(false);
     }
     if (!isHomePage) {
-      handleDeleteSavedArticleSubmit(card);
+      handleDeleteSavedArticleSubmit(card._id, token);
     }
-  };
+  }
 
   return (
-    <article className="card">
-      <div className="card__image-wrapper">
-        <img className="card__image" src={imageSrc} alt={cardTitle} />
-      </div>
-      <div className="card__text-container">
-        <p className="card__date">{modifiedDate}</p>
-        <h3 className="card__title">{cardTitle}</h3>
-        <p className="card__subtitle">{cardSubtitle}</p>
-        <p className="card__source">{cardSurce}</p>
-      </div>
-      <button
-        className={isHomePage ? "card__button-save" : "card__button-trash"}
-        aria-label={isHomePage ? "save article" : "delete article"}
-        onClick={handleSaveArticleClick}
-        onMouseMove={handleChageBackground}
-      ></button>
-      {!isHomePage && <p className="card__keyword">{cardKeywrod}</p>}
-    </article>
+    <a className="card__link" target="_blank" rel="noreferrer" href={cardLink}>
+      <article className="card">
+        <div className="card__image-wrapper">
+          <img className="card__image" src={imageSrc} alt={cardTitle} />
+        </div>
+
+        <div className="card__text-container">
+          <p className="card__date">{modifiedDate}</p>
+          <h3 className="card__title">{cardTitle}</h3>
+          <p className="card__subtitle">{cardSubtitle}</p>
+          <p className="card__source">{cardSurce}</p>
+        </div>
+
+        <button
+          className={isHomePage ? "card__button-save" : "card__button-trash"}
+          aria-label={isHomePage ? "save article" : "delete article"}
+          onClick={handleSaveArticleClick}
+          onMouseMove={handleChageBackground}
+        ></button>
+        {!isLoggedIn ? (
+          <p className="card__tooltip card__item_absolute">{tooltipText}</p>
+        ) : undefined}
+        {!isHomePage && <p className="card__keyword">{cardKeywrod}</p>}
+      </article>
+    </a>
   );
 }
 

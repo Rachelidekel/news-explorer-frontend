@@ -2,6 +2,7 @@ import { useState } from "react";
 import NewsCardList from "../NewsCardList/NewsCardList";
 
 function SearchResults({
+  token,
   isHomePage,
   isLoggedIn,
   cards,
@@ -13,16 +14,17 @@ function SearchResults({
 }) {
   const [isMore, setIsMore] = useState(false);
 
-  const handleShowMorePosts = () => {
+  function handleShowMorePosts() {
     handleShowMoreClick();
     setIsMore(true);
-  };
+  }
 
   return (
     <section className="search-results">
       <div className="search-results__container">
         <h2 className="search-results__title">Search results</h2>
         <NewsCardList
+          token={token}
           isHomePage={isHomePage}
           cards={cards}
           savedCards={savedCards}

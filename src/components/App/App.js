@@ -32,7 +32,7 @@ function App() {
     useState(false);
 
   const [currentUser, setCurrentUser] = useState({});
-  const [token, setToken] = useState("");
+  const [token, setToken] = useState(localStorage.getItem("JWT"));
   const [isAuthError, setIsAuthError] = useState("");
 
   const [keyword, setKeyword] = useState("");
@@ -55,7 +55,9 @@ function App() {
 
   useEffect(() => {
     if (token) {
-      mainApi.setToken(token);
+      mainApi.getCurrentUser(token).then((userInfo) => {
+        setCurrentUser(userInfo);
+      });
     } else {
       checkToken();
     }
@@ -94,9 +96,11 @@ function App() {
       .login(email, password)
       .then((res) => {
         if (res.token) {
+          localStorage.setItem("jwt", res.token);
           setIsLoggedIn(true);
           setToken(res.token);
           checkToken();
+          setCurrentUser({});
           closeAllPopups();
         }
       })
@@ -228,15 +232,7 @@ function App() {
     setNextAmountOfCards(nextAmountOfCards + 3);
   }
 
-  function handleSaveArticleSubmit(
-    title,
-    text,
-    date,
-    source,
-    link,
-    image,
-    token
-  ) {
+  function handleSaveArticleSubmit(title, text, date, source, link, image) {
     if (isLoggedIn) {
       mainApi
         .postArticle(keyword, title, text, date, source, link, image, token)
@@ -254,7 +250,8 @@ function App() {
         mainApi
           .getSavedArticles(token)
           .then((articles) => {
-            articles = articles.filter(
+            console.log(cards);
+            articles = cards.filter(
               (article) => article.link === currentArticle.url
             );
             mainApi
@@ -314,13 +311,14 @@ function App() {
               handleDeleteSavedArticleSubmit={handleDeleteSavedArticleSubmit}
             />
           </Route>
-          <ProtectedRoute path="/saved-news">
+          <ProtectedRoute path="/saved-news" isLoggedIn={isLoggedIn}>
             <SavedNews
               isHomePage={isHomePage}
-              isLoggedIn={isLoggedIn}
               savedCards={savedCards}
+              isLoggedIn={isLoggedIn}
               tooltipText="Remove from saved"
               onDelete={handleDeleteSavedArticleSubmit}
+              token={token}
             />
           </ProtectedRoute>
           <Route path="*">

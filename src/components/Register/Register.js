@@ -1,6 +1,6 @@
 import React from "react";
 import PopupWithForm from "../PopupWithForm/PopupWithForm";
-import { useFormAndValidation } from "../../hooks/UseForm";
+import { useFormAndValidation } from "../../Hooks/UseForm";
 
 function RegisterPopup({
   isOpen,
