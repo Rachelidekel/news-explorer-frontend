@@ -13,7 +13,7 @@
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.079);
 }
 
-.card__link{
+.card__link {
   text-decoration: none;
 }
 
@@ -124,6 +124,22 @@
   background-image: url("../../images/save_icon_active.svg");
 }
 
+.card__button-saved {
+  background-color: #ffffff;
+  top: 24px;
+  right: 24px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 8px;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: background-image 0.2s linear;
+  cursor: pointer;
+  background-image: url("../../images/save_icon_active.svg");
+}
+
 .card__button-trash {
   background-color: #ffffff;
   top: 24px;
@@ -194,6 +210,17 @@
   opacity: 1;
 }
 
+.card__item_absoulte-saved {
+  height: 40px;
+  top: 24px;
+  background-color: #fff;
+  border: none;
+  border-radius: 10px;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+}
+
 @media screen and (max-width: 786px) {
   .card {
     max-width: 224px;
@@ -246,6 +273,10 @@
     right: 8px;
   }
 
+  .card__button-saved {
+    top: 8px;
+    right: 8px;
+  }
   .card__button-trash {
     top: 8px;
     right: 8px;
@@ -263,6 +294,10 @@
   }
 
   .card__item_absolute {
+    top: 8px;
+  }
+
+  .card__item_absoulte-saved {
     top: 8px;
   }
 }
@@ -316,6 +351,11 @@
   }
 
   .card__button-save {
+    top: 16px;
+    right: 16px;
+  }
+
+  .card__button-saved {
     top: 16px;
     right: 16px;
   }

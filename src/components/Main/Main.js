@@ -8,6 +8,7 @@ import ReceivingError from "../ReceivingError/ReceivingError";
 function Main({
   token,
   cards,
+  savedCards,
   isHomePage,
   isLoggedIn,
   handleSaveArticleSubmit,
@@ -25,6 +26,7 @@ function Main({
         <SearchResults
           token={token}
           cards={cards}
+          savedCards={savedCards}
           moreCards={moreCards}
           isHomePage={isHomePage}
           isLoggedIn={isLoggedIn}

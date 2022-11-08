@@ -15,21 +15,14 @@ function NewsCard({
   tooltipText,
   handleSaveArticleSubmit,
   handleDeleteSavedArticleSubmit,
+  isSaved,
 }) {
   const [changeBackground, setChangeBackground] = useState(false);
-  //const [isHover, setIsHover] = useState(false);
-  const [isMarkedArticle, setIsMarkedArticle] = useState(false);
+  const [isMarkedArticle, setIsMarkedArticle] = useState(isSaved);
 
   function handleChageBackground() {
     setChangeBackground(!changeBackground);
   }
-
-  //const boxStyle = {
-  //backgroundImage: isHover ? `url(${props.hoverBtn})` : `url(${props.inactiveBtn})`
-  //};
-  //const markedBoxStyle = {
-  //backgroundImage: `url(${props.markedBtn})`
-  //};
 
   const modifiedDate = modifyDate();
 
@@ -61,13 +54,6 @@ function NewsCard({
     )}, ${card.publishedAt.slice(0, 4)}`;
   }
 
-  //const handleMouseEnter = () => {
-  //setIsHover(true);
-  //};
-  //const handleMouseLeave = () => {
-  //setIsHover(false);
-  //};
-
   function handleSaveArticleClick(e) {
     e.preventDefault();
     if (isHomePage && isMarkedArticle === false) {
@@ -85,11 +71,11 @@ function NewsCard({
         handleChageBackground();
       }
     } else if (isHomePage && isMarkedArticle === true) {
-      handleDeleteSavedArticleSubmit(card._id, token);
+      handleDeleteSavedArticleSubmit(card);
       setIsMarkedArticle(false);
     }
     if (!isHomePage) {
-      handleDeleteSavedArticleSubmit(card._id, token);
+      handleDeleteSavedArticleSubmit(card);
     }
   }
 
@@ -99,22 +85,31 @@ function NewsCard({
         <div className="card__image-wrapper">
           <img className="card__image" src={imageSrc} alt={cardTitle} />
         </div>
-
         <div className="card__text-container">
           <p className="card__date">{modifiedDate}</p>
           <h3 className="card__title">{cardTitle}</h3>
           <p className="card__subtitle">{cardSubtitle}</p>
           <p className="card__source">{cardSurce}</p>
         </div>
-
         <button
-          className={isHomePage ? "card__button-save" : "card__button-trash"}
+          className={
+            isHomePage
+              ? isSaved
+                ? "card__button-saved"
+                : "card__button-save"
+              : "card__button-trash"
+          }
           aria-label={isHomePage ? "save article" : "delete article"}
           onClick={handleSaveArticleClick}
           onMouseMove={handleChageBackground}
         ></button>
         {!isLoggedIn ? (
           <p className="card__tooltip card__item_absolute">{tooltipText}</p>
+        ) : undefined}{" "}
+        {isLoggedIn && !isHomePage ? (
+          <p className="card__tooltip card__item_absoulte-saved">
+            {tooltipText}
+          </p>
         ) : undefined}
         {!isHomePage && <p className="card__keyword">{cardKeywrod}</p>}
       </article>

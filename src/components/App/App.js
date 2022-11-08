@@ -21,7 +21,7 @@ import * as newsApi from "../../utils/NewsApi";
 let arrayForHoldingCards = [];
 
 function App() {
-  const [isHomePage, setIsHomePage] = useState();
+  const [isHomePage, setIsHomePage] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [cards, setCards] = useState([]);
   const [savedCards, setSavedCards] = useState([]);
@@ -32,7 +32,7 @@ function App() {
     useState(false);
 
   const [currentUser, setCurrentUser] = useState({});
-  const [token, setToken] = useState(localStorage.getItem("JWT"));
+  const [token, setToken] = useState(localStorage.getItem("jwt"));
   const [isAuthError, setIsAuthError] = useState("");
 
   const [keyword, setKeyword] = useState("");
@@ -50,18 +50,31 @@ function App() {
   const history = useHistory();
 
   useEffect(() => {
-    location.pathname !== "/" ? setIsHomePage(false) : setIsHomePage(true);
+    location.pathname === "/" ? setIsHomePage(true) : setIsHomePage(false);
   }, [location]);
 
   useEffect(() => {
+    console.log("line-58", token);
     if (token) {
       mainApi.getCurrentUser(token).then((userInfo) => {
+        console.log(userInfo);
         setCurrentUser(userInfo);
+        setIsLoggedIn(true);
       });
+      mainApi
+        .getSavedArticles(token)
+        .then((articles) => {
+          console.log(articles);
+          setSavedCards(articles.reverse());
+          counterOfKeywords(articles);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     } else {
       checkToken();
     }
-  }, [token]);
+  }, []);
 
   function handleSinginClick() {
     setIsLoginPopupOpen(true);
@@ -96,6 +109,7 @@ function App() {
       .login(email, password)
       .then((res) => {
         if (res.token) {
+          console.log(res);
           localStorage.setItem("jwt", res.token);
           setIsLoggedIn(true);
           setToken(res.token);
@@ -133,6 +147,7 @@ function App() {
       mainApi
         .getSavedArticles(token)
         .then((articles) => {
+          console.log(articles);
           setSavedCards(articles.reverse());
           counterOfKeywords(articles);
         })
@@ -207,6 +222,7 @@ function App() {
     newsApi
       .getNews(keyword)
       .then((cards) => {
+        console.log(cards.articles);
         setIsPreloaderOpen(false);
         if (cards.totalResults !== 0) {
           setIsSearchResultOpen(true);
@@ -236,6 +252,9 @@ function App() {
     if (isLoggedIn) {
       mainApi
         .postArticle(keyword, title, text, date, source, link, image, token)
+        .then((data) => {
+          setSavedCards([...savedCards, data.data]);
+        })
         .catch((err) => {
           console.log(err);
         });
@@ -250,15 +269,22 @@ function App() {
         mainApi
           .getSavedArticles(token)
           .then((articles) => {
-            console.log(cards);
-            articles = cards.filter(
-              (article) => article.link === currentArticle.url
+            console.log(articles);
+            let articleId;
+            const filteredArticles = articles.filter(
+              (article) => article.link !== currentArticle.url
             );
-            mainApi
-              .deleteArticle(articles[articles.length - 1]._id, token)
-              .catch((err) => {
-                console.log(err);
-              });
+
+            articles.forEach((art) => {
+              if (art.link === currentArticle.url) {
+                articleId = art._id;
+              }
+            });
+            setSavedCards(filteredArticles);
+
+            mainApi.deleteArticle(articleId, token).catch((err) => {
+              console.log(err);
+            });
           })
           .catch((err) => {
             console.log(err);
@@ -298,6 +324,7 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Main
+              savedCards={savedCards}
               isHomePage={isHomePage}
               cards={cards}
               isPreloaderOpen={isPreloaderOpen}
@@ -317,7 +344,7 @@ function App() {
               savedCards={savedCards}
               isLoggedIn={isLoggedIn}
               tooltipText="Remove from saved"
-              onDelete={handleDeleteSavedArticleSubmit}
+              handleDeleteSavedArticleSubmit={handleDeleteSavedArticleSubmit}
               token={token}
             />
           </ProtectedRoute>

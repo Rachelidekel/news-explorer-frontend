@@ -13,7 +13,7 @@ function SavedNewsHeader({ savedCards, topOfKeywords }) {
         {currentUser.name}, You have {savedCards.length} saved articles
       </p>
       <p className="news-header__keywords">
-        By keywords:
+        By keywords:&nbsp;
         <span className="news-header__keywords-bold">
           {topOfKeywords.length <= 2
             ? topOfKeywords.join(", ")
