@@ -168,7 +168,7 @@
   border-radius: 8px;
   position: absolute;
   font-family: "Roboto", Arial, Helvetica, sans-serif;
-  font-family: 500;
+  font-weight: 500;
   font-size: 14px;
   line-height: 24px;
   color: #000000;
@@ -184,22 +184,25 @@
   position: absolute;
   margin: 0;
   padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 2px;
 }
 
 .card__tooltip {
   opacity: 0;
   right: 69px;
   top: 24px;
-  padding: 11px 20px;
   font-family: "Roboto", Arial, Helvetica, sans-serif;
   font-weight: 500;
   font-size: 12px;
   line-height: 14px;
   transition: opacity 0.2s linear;
   color: #000000;
-  width: 142px;
-  height: 18px;
+  width: 159px;
   text-align: center;
+  z-index: 3;
 }
 
 .card__button-save:hover + .card__tooltip {
@@ -219,6 +222,18 @@
   position: absolute;
   margin: 0;
   padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 2px;
+}
+
+.button .card__keyword {
+ opacity: 0;
+}
+
+.card__button-trash:hover .card__keyword {
+opacity: 0;
 }
 
 @media screen and (max-width: 786px) {
@@ -288,9 +303,8 @@
   }
 
   .card__tooltip {
-    width: 126px;
+    width: 110px;
     right: 50px;
-    padding: 11px 10px;
   }
 
   .card__item_absolute {
@@ -299,8 +313,10 @@
 
   .card__item_absoulte-saved {
     top: 8px;
-  }
+  }  
 }
+
+
 
 @media screen and (max-width: 740px) {
   .card {
@@ -368,5 +384,19 @@
   .card__keyword {
     top: 16px;
     left: 16px;
+  }
+
+  .card__tooltip {
+    width: 126px;
+  }
+
+  .card__item_absolute {
+    top: 16px;
+    right: 60px;
+  }
+
+  .card__item_absoulte-saved {
+    top: 16px;
+    right: 60px;
   }
 }

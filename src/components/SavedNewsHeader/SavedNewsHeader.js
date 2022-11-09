@@ -3,8 +3,6 @@ import CurrentUserContext from "../../contexts/CurrentUserContext";
 
 function SavedNewsHeader({ savedCards, topOfKeywords }) {
   const currentUser = useContext(CurrentUserContext);
-  //const keywords = data.map((card) => card.keyword);
-  //const uniqueKeywords = [...new Set(keywords)];
 
   return (
     <div className="news-header">

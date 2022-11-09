@@ -40,15 +40,13 @@ function RegisterPopup({
           placeholder="Enter email"
           required
         />
-        <div className="popup__error-container">
-          <span
-            className={`popup__field-error email-field-error" ${
-              isAuthError ? isAuthError : ""
-            }`}
-          >
-            {errors.email}
-          </span>
-        </div>
+        <span
+          className={`popup__field-error email-field-error" ${
+            isAuthError ? isAuthError : ""
+          }`}
+        >
+          {errors.email}
+        </span>
         <p className="popup__field-description">Password</p>
         <input
           onChange={handleChange}
@@ -61,15 +59,13 @@ function RegisterPopup({
           required
           minLength="8"
         />
-        <div className="popup__error-container">
-          <span
-            className={`popup__field-error password-field-error" ${
-              isAuthError ? isAuthError : ""
-            }`}
-          >
-            {errors.password}
-          </span>
-        </div>
+        <span
+          className={`popup__field-error password-field-error" ${
+            isAuthError ? isAuthError : ""
+          }`}
+        >
+          {errors.password}
+        </span>
         <p className="popup__field-description">Username</p>
         <input
           onChange={handleChange}
@@ -81,15 +77,13 @@ function RegisterPopup({
           placeholder="Enter your username"
           required
         />
-        <div className="popup__error-container">
-          <span
-            className={`popup__field-error text-field-error" ${
-              isAuthError ? isAuthError : ""
-            }`}
-          >
-            {errors.username}
-          </span>
-        </div>
+        <span
+          className={`popup__field-error text-field-error" ${
+            isAuthError ? isAuthError : ""
+          }`}
+        >
+          {errors.username}
+        </span>
       </div>
     </PopupWithForm>
   );

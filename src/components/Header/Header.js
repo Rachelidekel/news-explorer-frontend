@@ -10,7 +10,6 @@ function Header({
   onSignInClick,
   onLogOut,
   isOpen,
-  onSubmit,
   onSearchClick,
   arrayForHoldingPosts,
   topOfKeywords,

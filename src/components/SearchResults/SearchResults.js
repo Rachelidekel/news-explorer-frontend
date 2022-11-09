@@ -35,7 +35,7 @@ function SearchResults({
           handleSaveArticleSubmit={handleSaveArticleSubmit}
           handleDeleteSavedArticleSubmit={handleDeleteSavedArticleSubmit}
         />
-        {moreCards.length !== cards.length ? (
+        {moreCards.length !== cards.length - 3 ? (
           <button
             className="search-results__button"
             onClick={handleShowMorePosts}

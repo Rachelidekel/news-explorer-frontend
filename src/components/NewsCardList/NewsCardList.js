@@ -57,12 +57,12 @@ function NewsCardList({
                 cardKeywrod={card.keyword}
                 isHomePage={isHomePage}
                 isLoggedIn={isLoggedIn}
-                imageSrc={card.urlToImage}
+                imageSrc={card.image}
                 cardTitle={card.title}
                 cardDate={card.publishedAt}
-                cardSubtitle={card.description}
-                cardSurce={card.source.name}
-                cardLink={card.url}
+                cardSubtitle={card.text}
+                cardSurce={card.source}
+                cardLink={card.link}
                 tooltipText={tooltipText}
                 handleSaveArticleSubmit={handleSaveArticleSubmit}
                 handleDeleteSavedArticleSubmit={handleDeleteSavedArticleSubmit}

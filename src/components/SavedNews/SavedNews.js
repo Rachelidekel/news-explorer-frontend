@@ -2,7 +2,6 @@ import React from "react";
 import NewsCardList from "../NewsCardList/NewsCardList";
 
 function SavedNews({
-  isHomePage,
   isLoggedIn,
   savedCards,
   handleDeleteSavedArticleSubmit,
@@ -13,7 +12,7 @@ function SavedNews({
       <div className="saved-news__container">
         <NewsCardList
           token={token}
-          isHomePage={isHomePage}
+          isHomePage={false}
           handleDeleteSavedArticleSubmit={handleDeleteSavedArticleSubmit}
           savedCards={savedCards}
           isLoggedIn={isLoggedIn}

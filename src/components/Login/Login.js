@@ -28,7 +28,7 @@ function LoginPopup({
       buttonText="sign in"
     >
       <div className="popup__field-container">
-        <label className="popup__field-description">Email</label>
+        <p className="popup__field-description">Email</p>
         <input
           onChange={handleChange}
           name="email"
@@ -47,7 +47,7 @@ function LoginPopup({
           {errors.email}
         </span>
 
-        <label className="popup__field-description">Password</label>
+        <p className="popup__field-description">Password</p>
         <input
           onChange={handleChange}
           name="password"

@@ -50,21 +50,42 @@ function App() {
   const history = useHistory();
 
   useEffect(() => {
-    location.pathname === "/" ? setIsHomePage(true) : setIsHomePage(false);
-  }, [location]);
+    history.location.pathname === "/"
+      ? setIsHomePage(true)
+      : setIsHomePage(false);
+  }, [history]);
 
   useEffect(() => {
-    console.log("line-58", token);
+    return history.listen((location) => {
+      const homePath = location.pathname === "/";
+      if (!homePath) {
+        setIsHomePage(false);
+      }
+      if (homePath) {
+        setIsHomePage(true);
+      }
+    });
+  }, [history]);
+
+  useEffect(() => {
+    //const token = localStorage.getItem("jwt");
     if (token) {
-      mainApi.getCurrentUser(token).then((userInfo) => {
-        console.log(userInfo);
-        setCurrentUser(userInfo);
-        setIsLoggedIn(true);
-      });
+      mainApi
+        .getCurrentUser(token)
+        .then((userInfo) => {
+          setCurrentUser(userInfo);
+          setIsLoggedIn(true);
+        })
+        .catch((err) => {
+          if (err === "Unauthorized") {
+            setCurrentUser({});
+            localStorage.removeItem("jwt");
+            setIsLoggedIn(false);
+          }
+        });
       mainApi
         .getSavedArticles(token)
         .then((articles) => {
-          console.log(articles);
           setSavedCards(articles.reverse());
           counterOfKeywords(articles);
         })
@@ -109,7 +130,6 @@ function App() {
       .login(email, password)
       .then((res) => {
         if (res.token) {
-          console.log(res);
           localStorage.setItem("jwt", res.token);
           setIsLoggedIn(true);
           setToken(res.token);
@@ -136,7 +156,7 @@ function App() {
       setIsLoggedIn(true);
       mainApi.setToken(jwt);
       mainApi
-        .getCurrentUser(token)
+        .getCurrentUser(jwt)
         .then((res) => {
           setCurrentUser(res);
         })
@@ -145,9 +165,8 @@ function App() {
         });
 
       mainApi
-        .getSavedArticles(token)
+        .getSavedArticles(jwt)
         .then((articles) => {
-          console.log(articles);
           setSavedCards(articles.reverse());
           counterOfKeywords(articles);
         })
@@ -176,17 +195,6 @@ function App() {
     setTopOfKeywords(result);
   }
 
-  //function handleHomeClick() {
-  //history.push("/");
-  //setHomeIsActive(true);
-  //}
-
-  function handleSavedArticlesClick() {
-    history.push("/saved-news");
-    setIsHomePage(false);
-    checkToken();
-  }
-
   function handleLogOut() {
     setIsLoggedIn(false);
     setIsHomePage(true);
@@ -205,6 +213,9 @@ function App() {
       closeAllPopups();
       setIsRegisterPopupOpen(true);
       setIsLoginPopupOpen(false);
+    } else if (isInfoTooltipOpen) {
+      closeAllPopups();
+      setIsLoginPopupOpen(true);
     } else {
       setIsLoginPopupOpen(true);
     }
@@ -222,7 +233,6 @@ function App() {
     newsApi
       .getNews(keyword)
       .then((cards) => {
-        console.log(cards.articles);
         setIsPreloaderOpen(false);
         if (cards.totalResults !== 0) {
           setIsSearchResultOpen(true);
@@ -269,7 +279,6 @@ function App() {
         mainApi
           .getSavedArticles(token)
           .then((articles) => {
-            console.log(articles);
             let articleId;
             const filteredArticles = articles.filter(
               (article) => article.link !== currentArticle.url
@@ -315,8 +324,6 @@ function App() {
           onSignInClick={handleSinginClick}
           onLogOut={handleLogOut}
           isOpen={isLoginPopupOpen || isRegisterPopupOpen}
-          //isInfoTooltipOpen={isInfoTooltipOpen}
-          handleSavedArticlesClick={handleSavedArticlesClick}
           savedCards={savedCards}
           onSearchClick={handleSearchSubmit}
           topOfKeywords={topOfKeywords}
@@ -340,7 +347,6 @@ function App() {
           </Route>
           <ProtectedRoute path="/saved-news" isLoggedIn={isLoggedIn}>
             <SavedNews
-              isHomePage={isHomePage}
               savedCards={savedCards}
               isLoggedIn={isLoggedIn}
               tooltipText="Remove from saved"

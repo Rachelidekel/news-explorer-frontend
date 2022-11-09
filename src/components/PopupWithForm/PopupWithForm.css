@@ -52,18 +52,18 @@
   line-height: 15px;
   letter-spacing: 0em;
   text-align: left;
+  margin-top: 30px;
 }
 
 .popup__field {
   border: none;
-  margin-bottom: 31px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   padding: 0;
   font-family: "Inter", Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
-  padding-bottom: 7px;
+  padding-bottom: 5px;
   width: 358px;
   text-align: start;
   color: #000;
@@ -94,13 +94,6 @@
   opacity: 0.2;
 }
 
-.popup__error-container {
-  padding-bottom: 13px;
-  width: 358px;
-  transition: opacity 0.2s linear;
-  height: 16px;
-}
-
 .popup__submit-error {
   display: flex;
   justify-content: center;
@@ -113,6 +106,10 @@
   font-size: 12px;
   line-height: 1.2;
   color: #ff0000;
+  position: absolute;
+  display: flex;
+  padding-top: 3px;
+  padding-bottom: 13px;
 }
 
 .popup__form-button {
@@ -145,10 +142,6 @@
   background-color: #e6e8eb;
   color: #b6bcbf;
   cursor: auto;
-}
-
-.popup__form-button_type_signup {
-  margin-top: 10px;
 }
 
 .popup__redirect {
