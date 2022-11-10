@@ -21,7 +21,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build"
+    "predeploy": "npm run build",
+    "deploy": "npm run build && scp -r ./build/* dudinka77@news-explorer-racheli.students.nomoredomainssbs.ru:/home/dudinka77/frontend"
   },
   "eslintConfig": {
     "extends": [

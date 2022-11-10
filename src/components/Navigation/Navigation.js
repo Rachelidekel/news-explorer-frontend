@@ -22,18 +22,14 @@ function Navigation({
 
   return (
     <nav
-      className={
-        isHomePage 
-          ? "navigation"
-          : "navigation_type_save-articles"
-      }
+      className={isHomePage ? "navigation" : "navigation_type_save-articles"}
       style={{ borderBottom: isMobileMenuOpen ? "none" : "" }}
     >
       <div
         className={
           !isMobileMenuOpen
             ? "navigation__wrapper"
-            : "navigation__wrapper-bg" && isHomePage 
+            : "navigation__wrapper-bg" && isHomePage
             ? "navigation__wrapper-bg"
             : "navigation__wrapper navigation__wrapper_type_save-articles"
         }

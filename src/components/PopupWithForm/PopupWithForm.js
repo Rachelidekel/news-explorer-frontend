@@ -17,6 +17,7 @@ function PopupWithForm({
   username,
   resetForm,
   isValid,
+  isAuthError,
 }) {
   function handleOnRegister(e) {
     e.preventDefault();
@@ -41,6 +42,11 @@ function PopupWithForm({
       >
         {children}
         <div className="popup__form-control"></div>
+        <span
+          className={`popup__submit-error ${isAuthError ? isAuthError : ""}`}
+        >
+          {isAuthError}
+        </span>
         <button
           className={`popup__form-button popup__form-button_type_${name} ${
             !isValid ? `popup__form-button_disabled` : ""

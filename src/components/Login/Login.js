@@ -26,6 +26,7 @@ function LoginPopup({
       resetForm={resetForm}
       onLoginSubmit={onLoginSubmit}
       buttonText="sign in"
+      isAuthError={isAuthError}
     >
       <div className="popup__field-container">
         <p className="popup__field-description">Email</p>

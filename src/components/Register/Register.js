@@ -11,6 +11,7 @@ function RegisterPopup({
 }) {
   const { values, handleChange, errors, isValid, resetForm } =
     useFormAndValidation();
+
   return (
     <PopupWithForm
       title="Sign up"
@@ -27,6 +28,7 @@ function RegisterPopup({
       onRegisterSubmit={onRegisterSubmit}
       resetForm={resetForm}
       buttonText="sign up"
+      isAuthError={isAuthError}
     >
       <div className="popup__field-container">
         <p className="popup__field-description">Email</p>

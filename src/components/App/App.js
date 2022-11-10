@@ -68,7 +68,6 @@ function App() {
   }, [history]);
 
   useEffect(() => {
-    //const token = localStorage.getItem("jwt");
     if (token) {
       mainApi
         .getCurrentUser(token)
@@ -95,6 +94,7 @@ function App() {
     } else {
       checkToken();
     }
+    // eslint-disable-next-line
   }, []);
 
   function handleSinginClick() {
@@ -117,7 +117,7 @@ function App() {
         setIsRegistrationSuccessful(true);
       })
       .catch((err) => {
-        setIsAuthError(`${err}`);
+        setIsAuthError(err);
         console.log(err);
       });
   }
@@ -140,7 +140,7 @@ function App() {
       })
       .catch((err) => {
         console.log(err);
-        setIsAuthError(`${err}`);
+        setIsAuthError(err);
       });
   }
 

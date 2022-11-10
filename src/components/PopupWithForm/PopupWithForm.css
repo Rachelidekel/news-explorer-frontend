@@ -97,7 +97,15 @@
 .popup__submit-error {
   display: flex;
   justify-content: center;
-  padding-bottom: 8px;
+  position: absolute;
+  color: #ff0000;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15px;
+  text-align: center;
+  margin-top: 20px;
+  margin-left: 120px;
 }
 
 .popup__field-error {
@@ -182,10 +190,6 @@
   .popup__form-button {
     margin-top: 36px;
   }
-
-  .popup__form-button_type_signup {
-    margin-top: 10px;
-  }
 }
 
 @media screen and (max-width: 530px) {
@@ -240,11 +244,14 @@
   .popup__form-button {
     max-width: 100%;
     padding: 0;
-    margin-top: 23px;
   }
 
   .popup__form-button_type_signup {
-    margin-top: 10px;
+    margin-top: 30px;
+  }
+
+  .popup__submit-error {
+    margin-left: 0;
   }
 }
 
