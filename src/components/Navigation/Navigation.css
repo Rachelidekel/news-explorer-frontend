@@ -145,6 +145,15 @@
   color: #1a1b22;
 }
 
+.navigation__button-text-white {
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: left;
+  color: #ffffff;
+}
+
 .navigation__button_black {
   color: rgba(26, 27, 34, 1);
   width: 112px;
@@ -158,6 +167,21 @@
   cursor: pointer;
   text-decoration: none;
   border: 1px solid #1a1b22;
+}
+
+.navigation__button_white {
+  color: #ffffff;
+  width: 112px;
+  height: 48px;
+  padding: 8px 12px 8px 15px;
+  gap: 5px;
+  border-radius: 100px;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  border: 1px solid #ffffff;
 }
 
 .navigation__button-icon {
@@ -279,6 +303,11 @@
   .navigation__button-text-black {
     font-size: 16px;
   }
+
+  .navigation__button-icon {
+    margin-right: 17px;
+    margin-left: 10px;
+  }
 }
 
 @media screen and (max-width: 650px) {
@@ -325,6 +354,11 @@
     margin-left: 40px;
     margin-right: 20px;
     font-size: 18px;
+  }
+
+  .navigation__button-icon {
+    margin-right: 50px;
+    margin-left: 8px;
   }
 }
 

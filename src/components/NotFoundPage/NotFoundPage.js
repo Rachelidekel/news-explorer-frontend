@@ -1,7 +1,7 @@
 import React from "react";
 import notFoundSmily from "../../images/NotFound_smily.svg";
 
-function NotFoundPage(props) {
+function NotFoundPage() {
   return (
     <section className="not-found-page">
       <div className="not-found-page__image">

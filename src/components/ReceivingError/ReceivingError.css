@@ -1,0 +1,62 @@
+.error-section {
+  padding: 80px 0;
+  width: 100%;
+  background-color: #f5f6f7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.error-section__image {
+  width: 86px;
+  height: 86px;
+  background-image: url("../../images/NotFound_smily.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.error-section__title {
+  margin: 0;
+  font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 24px;
+  padding-top: 24px;
+  color: #b6bcbf;
+  max-width: 356px;
+  text-align: center;
+  padding: 0 20px;
+  padding-top: 20px;
+}
+
+@media screen and (max-width: 1106px) {
+  .error-section {
+    padding: 40px 0;
+  }
+
+  .error-section__image {
+    width: 66px;
+    height: 66px;
+  }
+
+  .error-section__title {
+    font-size: 20px;
+    padding-top: 18px;
+  }
+}
+
+@media screen and (max-width: 766px) {
+  .error-section {
+    padding: 20px 0;
+  }
+
+  .error-section__image {
+    width: 56px;
+    height: 56px;
+  }
+
+  .error-section__title {
+    font-size: 18px;
+    padding-top: 14px;
+  }
+}

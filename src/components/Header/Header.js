@@ -3,7 +3,17 @@ import Navigation from "../Navigation/Navigation";
 import SavedNewsHeader from "../SavedNewsHeader/SavedNewsHeader";
 import SearchForm from "../SearchForm/SearchForm";
 
-function Header({ isHomePage, cardData, onSignInClick, onLogOut, isOpen }) {
+function Header({
+  isHomePage,
+  isLoggedIn,
+  savedCards,
+  onSignInClick,
+  onLogOut,
+  isOpen,
+  onSearchClick,
+  arrayForHoldingPosts,
+  topOfKeywords,
+}) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   function handleMobileMenu() {
@@ -24,6 +34,7 @@ function Header({ isHomePage, cardData, onSignInClick, onLogOut, isOpen }) {
           isMobileMenuOpen={isMobileMenuOpen}
           handleMobileMenu={handleMobileMenu}
           onLogOut={onLogOut}
+          isLoggedIn={isLoggedIn}
         />
       </div>
       {isHomePage ? (
@@ -34,12 +45,17 @@ function Header({ isHomePage, cardData, onSignInClick, onLogOut, isOpen }) {
             account.
           </p>
 
-          <SearchForm isHomePage={isHomePage} />
+          <SearchForm
+            isHomePage={isHomePage}
+            onSearchClick={onSearchClick}
+            arrayForHoldingPosts={arrayForHoldingPosts}
+          />
         </div>
       ) : (
         <SavedNewsHeader
-          cardData={cardData}
+          savedCards={savedCards}
           handleMobileMenu={handleMobileMenu}
+          topOfKeywords={topOfKeywords}
         />
       )}
     </header>

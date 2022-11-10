@@ -1,21 +1,25 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import logoWhite from "../../images/NewsExplorer_logo_white.svg";
 import logoBlack from "../../images/NewsExplorer_logo_black.svg";
-//import logOutIconWhite from "../../images/logout_icon_white.svg";
+import logOutIconWhite from "../../images/logout_icon_white.svg";
 import logOutIconBlack from "../../images/logout_icon_black.svg";
 import hbMenuWhite from "../../images/menu_icon_white.svg";
 import hbMenuBlack from "../../images/menu_icon_black.svg";
 import closeIcon from "../../images/close_icon.svg";
 import Mobile from "../Mobile/Mobile";
+import CurrentUserContext from "../../contexts/CurrentUserContext";
 
 function Navigation({
   onLogOut,
   isHomePage,
+  isLoggedIn,
   onClick,
   isMobileMenuOpen,
   handleMobileMenu,
 }) {
+  const currentUser = useContext(CurrentUserContext);
+
   return (
     <nav
       className={isHomePage ? "navigation" : "navigation_type_save-articles"}
@@ -53,25 +57,29 @@ function Navigation({
                 Home
               </NavLink>
             </li>
-            <li className="navigation__menu-item">
-              <NavLink
-                to="/saved-news"
-                className={
-                  isHomePage
-                    ? "navigation__link"
-                    : "navigation__link navigation__link_black"
-                }
-                activeClassName={
-                  isHomePage
-                    ? "navigation__link-active"
-                    : "navigation__link-active navigation__link-active_black"
-                }
-              >
-                Saved articles
-              </NavLink>
-            </li>
+            {isLoggedIn ? (
+              <li className="navigation__menu-item">
+                <NavLink
+                  to="/saved-news"
+                  className={
+                    isHomePage
+                      ? "navigation__link"
+                      : "navigation__link navigation__link_black"
+                  }
+                  activeClassName={
+                    isHomePage
+                      ? "navigation__link-active"
+                      : "navigation__link-active navigation__link-active_black"
+                  }
+                >
+                  Saved articles
+                </NavLink>
+              </li>
+            ) : (
+              ""
+            )}
           </ul>
-          {isHomePage ? (
+          {!isLoggedIn ? (
             <button
               onClick={onClick}
               type="button"
@@ -84,14 +92,24 @@ function Navigation({
             <button
               onClick={onLogOut}
               type="button"
-              className="navigation__button navigation__button_black"
+              className={`${
+                isHomePage
+                  ? "navigation__button navigation__button_white"
+                  : "navigation__button navigation__button_black"
+              }`}
             >
               {" "}
-              <span className="navigation__button-text navigation__button-text-black">
-                Racheli
+              <span
+                className={`${
+                  isHomePage
+                    ? "navigation__button-text navigation__button-text-white"
+                    : "navigation__button-text navigation__button-text-black"
+                }`}
+              >
+                {currentUser.name}
               </span>
               <img
-                src={logOutIconBlack}
+                src={isHomePage ? logOutIconWhite : logOutIconBlack}
                 alt="logout"
                 className="navigation__button-icon"
               />
@@ -127,6 +145,7 @@ function Navigation({
         isMobileMenuOpen={isMobileMenuOpen}
         onLogOut={onLogOut}
         isHomePage={isHomePage}
+        isLoggedIn={isLoggedIn}
       />
     </nav>
   );
