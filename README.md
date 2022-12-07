@@ -55,7 +55,7 @@ Home page for logged in users
 
 ![cards](https://user-images.githubusercontent.com/98940522/206208859-96e59f0d-0e27-46b2-86e9-648bc69356b8.png)
 
-#### Bookmark for saving an articale && icon blue for saving an articale
+#### Bookmark for saving an articale && Icon blue for saving an articale
 
 ![bookmark_for_save_card](https://user-images.githubusercontent.com/98940522/206208918-b988dbbc-8cc1-4b95-b230-e655203ebbc6.png)  ![card_saved_icon_blue](https://user-images.githubusercontent.com/98940522/206209074-b61361a1-2bc6-4a3b-b3df-44f8bb2f84ec.png)
 
