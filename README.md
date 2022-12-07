@@ -1,6 +1,6 @@
 # News-Explorer :
 
-A site where you can search for articles on various topics and save them to your account.
+A site where you can search for articles on various topics and save them to your account. <br />
 Authorization and Registration are handled by the back-end server.
 
 ## Features
