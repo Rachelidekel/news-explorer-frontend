@@ -31,7 +31,7 @@ Authorization and Registration handled by the back-end server.
 
 ## Screenshots
 
-###Home page for unlogged in users
+### Home page for unlogged in users
 
 ![homepage](https://user-images.githubusercontent.com/98940522/206208069-5a047a08-3380-44e5-aa46-d9a58799e5fe.png)
 
