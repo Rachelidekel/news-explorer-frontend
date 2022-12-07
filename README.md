@@ -66,3 +66,7 @@ Home page for logged in users
 #### Saved News page
 
 ![saved_news_page](https://user-images.githubusercontent.com/98940522/206210585-655c81a2-5f47-4615-b4db-7cb4b3d30013.png)
+
+#### About the author
+
+![about_the_author](https://user-images.githubusercontent.com/98940522/206213056-7a2e4ad6-1694-4ebb-825d-d58df78bbc02.png)
