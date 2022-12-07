@@ -31,7 +31,7 @@ Authorization and Registration handled by the back-end server.
 
 ## Screenshots
 
-Home page for unlogged in users
+###Home page for unlogged in users
 
 ![homepage](https://user-images.githubusercontent.com/98940522/206208069-5a047a08-3380-44e5-aa46-d9a58799e5fe.png)
 
@@ -65,4 +65,4 @@ Searcg Results Not Fond
 
 Saved News page
 
-![saved_news_page](https://user-images.githubusercontent.com/98940522/206209201-6a2606dd-790d-462c-8b53-f638855a0674.png)
+![saved_news_page](https://user-images.githubusercontent.com/98940522/206210585-655c81a2-5f47-4615-b4db-7cb4b3d30013.png)
