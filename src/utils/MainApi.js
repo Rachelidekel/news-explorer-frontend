@@ -91,8 +91,8 @@ class Api {
 }
 
 const mainApi = new Api({
-  //baseUrl: "https://api.news-explorer-racheli.students.nomoredomainssbs.ru",
-  baseUrl: "http://localhost:3000",
+  baseUrl: "https://api.news-explorer-racheli.students.nomoredomainssbs.ru",
+  //baseUrl: "http://localhost:3000",
 });
 
 export default mainApi;
