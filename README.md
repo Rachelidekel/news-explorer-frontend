@@ -57,7 +57,7 @@ Home page for logged in users
 
 #### Bookmark for saving an articale && Icon blue for saving an articale
 
-<img width="426" src="https://user-images.githubusercontent.com/98940522/206208918-b988dbbc-8cc1-4b95-b230-e655203ebbc6.png" alt="Screen Shot of bookmark of card"> &nbsp; &nbsp; &nbsp; <img width="426" src="https://user-images.githubusercontent.com/98940522/206220395-253a6594-4055-43c4-862c-f0ee6471bef2.png" alt="Screen Shot of icon saving on the card">
+<img width="426" src="https://user-images.githubusercontent.com/98940522/206208918-b988dbbc-8cc1-4b95-b230-e655203ebbc6.png" alt="Screen Shot of bookmark of card"> &nbsp; &nbsp; &nbsp; &nbsp; <img width="426" src="https://user-images.githubusercontent.com/98940522/206220395-253a6594-4055-43c4-862c-f0ee6471bef2.png" alt="Screen Shot of icon saving on the card">
 
 #### Search Results Not Fond
 
