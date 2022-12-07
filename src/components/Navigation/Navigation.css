@@ -187,7 +187,11 @@
 .navigation__button-icon {
   width: 17px;
   height: 17px;
-  margin-left: 17px;
+  margin-left: 10px;
+}
+
+.navigation__button-icon_type_black {
+  margin-left: 25px;
 }
 
 .navigation__hamburger {

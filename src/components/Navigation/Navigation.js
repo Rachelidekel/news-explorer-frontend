@@ -111,7 +111,11 @@ function Navigation({
               <img
                 src={isHomePage ? logOutIconWhite : logOutIconBlack}
                 alt="logout"
-                className="navigation__button-icon"
+                className={`${
+                  isHomePage
+                    ? "navigation__button-icon"
+                    : "navigation__button-icon_type_black"
+                }`}
               />
             </button>
           )}

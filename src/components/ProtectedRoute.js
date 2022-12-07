@@ -1,7 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Route, Redirect } from "react-router-dom";
 
-function ProtectedRoute({ isLoggedIn, children, ...props }) {
+function ProtectedRoute({
+  isLoggedIn,
+  setIsLoginPopupOpen,
+  path,
+  children,
+  ...props
+}) {
+  useEffect(() => {
+    if (path && !isLoggedIn) {
+      setIsLoginPopupOpen(true);
+    }
+  }, [path, isLoggedIn, setIsLoginPopupOpen]);
+
   const token = localStorage.getItem("jwt");
   return (
     <Route {...props}>

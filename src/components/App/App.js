@@ -345,7 +345,11 @@ function App() {
               handleDeleteSavedArticleSubmit={handleDeleteSavedArticleSubmit}
             />
           </Route>
-          <ProtectedRoute path="/saved-news" isLoggedIn={isLoggedIn}>
+          <ProtectedRoute
+            path="/saved-news"
+            isLoggedIn={isLoggedIn}
+            setIsLoginPopupOpen={setIsLoginPopupOpen}
+          >
             <SavedNews
               savedCards={savedCards}
               isLoggedIn={isLoggedIn}
